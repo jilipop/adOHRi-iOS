@@ -1,0 +1,16 @@
+framework module ortp [extern_c] {
+  header "ortp.h"
+  header "logging.h"
+  header "port.h"
+  header "rtpsession.h"
+  header "rtp.h"
+  header "payloadtype.h"
+  header "rtpprofile.h"
+  header "sessionset.h"
+  header "rtcp.h"
+  header "str_utils.h"
+  header "utils.h"
+  header "rtpsignaltable.h"
+  header "event.h"
+  header "fecstream.h"
+}

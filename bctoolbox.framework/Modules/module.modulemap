@@ -1,0 +1,5 @@
+framework module bctoolbox [extern_c]{
+  header "logging.h"
+  header "port.h"
+  header "list.h"
+}

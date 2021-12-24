@@ -1,0 +1,6 @@
+framework module opus [extern_c] {
+  umbrella header "opus.h"
+
+  export *
+  module * { export * }
+}
