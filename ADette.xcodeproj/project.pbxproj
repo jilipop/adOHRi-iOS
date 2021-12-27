@@ -26,6 +26,7 @@
 		5265CF292775E4410075380B /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; };
 		5265CF2A2775E4430075380B /* opus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF232775E0050075380B /* opus.framework */; };
 		526DE0CF2771D244007F2105 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520BC7682768DB4E0026A815 /* AVFoundation.framework */; };
+		52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C1D8DC2779EC550081C799 /* AVFAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		5265CF1F2775DFD00075380B /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bctoolbox.framework; sourceTree = "<group>"; };
 		5265CF212775DFF00075380B /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ortp.framework; sourceTree = "<group>"; };
 		5265CF232775E0050075380B /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
+		52C1D8DC2779EC550081C799 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */,
 				5265CF252775E09E0075380B /* bctoolbox.framework in Frameworks */,
 				5265CF262775E0A90075380B /* ortp.framework in Frameworks */,
 				5265CF272775E0B10075380B /* opus.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		520BC7672768DB4E0026A815 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52C1D8DC2779EC550081C799 /* AVFAudio.framework */,
 				5265CF1F2775DFD00075380B /* bctoolbox.framework */,
 				5265CF212775DFF00075380B /* ortp.framework */,
 				5265CF232775E0050075380B /* opus.framework */,
@@ -493,6 +497,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KZ58BK29GC;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$SRCROOT/**";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -500,6 +506,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -528,12 +535,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KZ58BK29GC;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ADette/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
