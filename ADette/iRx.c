@@ -83,7 +83,7 @@ static int play_one_frame(void *packet,
         return -1;
     }
 
-    if (!TPCircularBufferProduceBytes(buffer, pcm, len))
+    if (TPCircularBufferProduceBytes(buffer, pcm, len) == false)
         printf("Error writing to circular buffer\n");
 
     return numDecodedSamples;
@@ -92,11 +92,8 @@ static int play_one_frame(void *packet,
 static void *run_rx()
 {
     int timestamp = 0;
-
-    if (!isPlayRequested)
-        printf("received stop signal.");
     
-    while (isPlayRequested) {
+    while (isPlayRequested == true) {
         int numBytesReceived, have_more;
         char buf[32768];
         void *packet;
