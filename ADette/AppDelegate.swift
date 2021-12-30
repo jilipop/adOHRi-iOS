@@ -1,12 +1,4 @@
-//
-//  AppDelegate.swift
-//  ADette
-//
-//  Created by Test on 14.12.21.
-//
-
 import UIKit
-import AVFAudio
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,15 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        print("bla")
-        
-        let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setCategory(.playback, mode: .spokenAudio, options: [])
-            } catch {
-                print("Failed to set audio session category.")
-            }
-        
+        print("Application launched")
         return true
     }
 
