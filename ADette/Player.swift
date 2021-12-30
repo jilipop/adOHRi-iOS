@@ -28,8 +28,6 @@ class Player {
     }
         
     func start() {
-        print("from player.start(): \(Thread.current)")
-        print(Thread.current.isMainThread)
         iRx_start(&inputBuffer)
         do {
             try audioSession.setActive(true)
@@ -57,10 +55,9 @@ class Player {
     }
     
     func fillOutputBuffer() {
-        let availableBytes = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
-        var inputBufferTail = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 8)
-        inputBufferTail = TPCircularBufferTail(&inputBuffer, availableBytes)
-        memcpy(outputBuffer.mutableAudioBufferList.pointee.mBuffers.mData, inputBufferTail, Int(availableBytes.pointee))
-        TPCircularBufferConsume(&inputBuffer, availableBytes.pointee)
+        var availableBytes: UInt32 = 0
+        let inputBufferTail = TPCircularBufferTail(&inputBuffer, &availableBytes)
+        memcpy(outputBuffer.mutableAudioBufferList.pointee.mBuffers.mData, inputBufferTail, Int(availableBytes))
+        TPCircularBufferConsume(&inputBuffer, availableBytes)
     }
 }
