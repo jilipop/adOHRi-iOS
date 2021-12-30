@@ -93,6 +93,9 @@ static void *run_rx()
 {
     int timestamp = 0;
 
+    if (!isPlayRequested)
+        printf("received stop signal.");
+    
     while (isPlayRequested) {
         int numBytesReceived, have_more;
         char buf[32768];
@@ -113,6 +116,7 @@ static void *run_rx()
         if (numDecodedSamples == -1)
             printf("Error: numDecodedSamples is -1.\n");
 
+        //printf("timestamp interval is %d", numDecodedSamples * referenceRate / rate);
         timestamp += numDecodedSamples * referenceRate / rate;
     }
     return NULL;
