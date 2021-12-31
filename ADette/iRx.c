@@ -46,8 +46,8 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port,
     RtpSession *session;
 
     session = rtp_session_new(RTP_SESSION_RECVONLY);
-    rtp_session_set_scheduling_mode(session, FALSE);
-    rtp_session_set_blocking_mode(session, FALSE);
+    rtp_session_set_scheduling_mode(session, TRUE);
+    rtp_session_set_blocking_mode(session, TRUE);
     rtp_session_set_local_addr(session, addr_desc, port, -1);
     rtp_session_set_connected_mode(session, FALSE);
     rtp_session_enable_adaptive_jitter_compensation(session, TRUE);
