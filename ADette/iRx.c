@@ -83,7 +83,8 @@ static int play_one_frame(void *packet,
         return -1;
     }
 
-    if (TPCircularBufferProduceBytes(buffer, pcm, len) == false)
+    uint32_t decodedBytes = numDecodedSamples/channels/sizeof(float);
+    if (TPCircularBufferProduceBytes(buffer, pcm, decodedBytes) == false)
         printf("Error writing to circular buffer\n");
 
     return numDecodedSamples;
@@ -152,5 +153,5 @@ static void iRx_deinit() {
 void iRx_stop() {
     isPlayRequested = false;
     pthread_join(thread_id, NULL);
-    iRx_deinit();
+    //iRx_deinit();
 }
