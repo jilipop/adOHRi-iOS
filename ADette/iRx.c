@@ -25,26 +25,23 @@ unsigned int rate = DEFAULT_RATE,
             port = DEFAULT_PORT,
             referenceRate = PAYLOAD_0_REFERENCE_RATE;
 const char *addr = DEFAULT_ADDR;
-uint32_t bufferLength = DEFAULT_BUFFER_LENGTH;
 
 pthread_t thread_id;
 bool isPlayRequested = false;
 
-TPCircularBuffer *buffer;
-OpusDecoder *decoder;
 RtpSession *session;
+OpusDecoder *decoder;
+TPCircularBuffer *buffer;
 
-static void timestamp_jump(RtpSession *session, void *a, void *b, void *c)
-{
+static void timestamp_jump(RtpSession *session, void *a, void *b, void *c) {
     printf("|\n");
     rtp_session_resync(session);
 }
 
-static RtpSession* create_rtp_recv(const char *addr_desc, const int port,
-        unsigned int jitter)
-{
+static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsigned int jitter) {
+    
     RtpSession *session;
-
+    
     session = rtp_session_new(RTP_SESSION_RECVONLY);
     rtp_session_set_scheduling_mode(session, TRUE);
     rtp_session_set_blocking_mode(session, TRUE);
@@ -65,10 +62,9 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port,
 
     return session;
 }
-static int play_one_frame(void *packet,
-        opus_int32 len,
-        OpusDecoder *decoder)
-{
+
+static int play_one_frame(void *packet, opus_int32 len) {
+    
     int numDecodedSamples;
     int samples = 1920;
     
@@ -83,15 +79,14 @@ static int play_one_frame(void *packet,
         return -1;
     }
 
-    uint32_t decodedBytes = numDecodedSamples/channels/sizeof(float);
+    uint32_t decodedBytes = numDecodedSamples * channels * sizeof(float);
     if (TPCircularBufferProduceBytes(buffer, pcm, decodedBytes) == false)
-        printf("Error writing to circular buffer\n");
+        printf("Error: Circular buffer overflow.\n");
 
     return numDecodedSamples;
 }
 
-static void *run_rx()
-{
+static void *run_rx() {
     int timestamp = 0;
     
     while (isPlayRequested == true) {
@@ -110,7 +105,7 @@ static void *run_rx()
             printf(".\n");
         }
 
-        int numDecodedSamples = play_one_frame(packet, numBytesReceived, decoder);
+        int numDecodedSamples = play_one_frame(packet, numBytesReceived);
         if (numDecodedSamples == -1)
             printf("Error: numDecodedSamples is -1.\n");
 
@@ -120,9 +115,7 @@ static void *run_rx()
     return NULL;
 }
 
-
-static void iRx_init()
-{
+static void iRx_init() {
     int error;
 
     decoder = opus_decoder_create(rate, channels, &error);
@@ -131,14 +124,13 @@ static void iRx_init()
             opus_strerror(error));
         return;
     }
-
     ortp_init();
     ortp_scheduler_init();
     session = create_rtp_recv(addr, port, jitter);
 }
 
-void iRx_start(TPCircularBuffer *bufferPointer) {
-    buffer = bufferPointer;
+void iRx_start(TPCircularBuffer *circularBuffer) {
+    buffer = circularBuffer;
     iRx_init();
     isPlayRequested = true;
     pthread_create(&thread_id, NULL, run_rx, NULL);
@@ -152,6 +144,8 @@ static void iRx_deinit() {
 
 void iRx_stop() {
     isPlayRequested = false;
-    pthread_join(thread_id, NULL);
-    //iRx_deinit();
+    errno = 0;
+    if (pthread_join(thread_id, NULL) != 0)
+        printf("%s\n",strerror(errno));
+    iRx_deinit();
 }
