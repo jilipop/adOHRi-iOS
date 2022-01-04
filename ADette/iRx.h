@@ -1,6 +1,7 @@
 #ifndef iRx_h
 #define iRx_h
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <netdb.h>
@@ -14,7 +15,7 @@
 #include "defaults.h"
 #include "TPCircularBuffer.h"
 
-void iRx_start(TPCircularBuffer *bufferPointer);
+void iRx_start(TPCircularBuffer *buffer);
 void iRx_stop(void);
 
 #endif /* iRx_h */
