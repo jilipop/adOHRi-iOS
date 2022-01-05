@@ -12,7 +12,7 @@
 #include <sys/types.h>
 #include <pthread.h>
 
-#include "defaults.h"
+#include "constants.h"
 #include "TPCircularBuffer.h"
 
 void iRx_start(TPCircularBuffer *buffer);
