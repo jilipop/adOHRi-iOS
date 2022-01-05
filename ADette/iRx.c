@@ -19,12 +19,13 @@
 
 #include "iRx.h"
 
-unsigned int rate = DEFAULT_RATE,
-            jitter = DEFAULT_JITTER,
-            channels = DEFAULT_CHANNELS,
-            port = DEFAULT_PORT,
-            referenceRate = PAYLOAD_0_REFERENCE_RATE;
-const char *addr = DEFAULT_ADDR;
+unsigned int rate = RATE,
+            jitter = JITTER,
+            channels = CHANNELS,
+            port = PORT,
+            referenceRate = PAYLOAD_0_REFERENCE_RATE,
+            samples = SAMPLES;
+const char *addr = ADDR;
 
 pthread_t thread_id;
 bool isPlayRequested = false;
@@ -66,7 +67,6 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
 static int play_one_frame(void *packet, opus_int32 len) {
     
     int numDecodedSamples;
-    int samples = 1920;
     
     float pcm[sizeof(float) * samples * channels];
     if (packet == NULL) {
