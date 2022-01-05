@@ -8,11 +8,12 @@ class Player {
     let outputFormat: AVAudioFormat
     let playerNode: AVAudioPlayerNode
     let converter: AVAudioConverter
-    let frameCapacity = UInt32(DEFAULT_BUFFER_LENGTH / 4)
+    let samplesPerPacket = UInt32(SAMPLES)
     let numChannels: UInt32 = 2
     let floatSize = UInt32(MemoryLayout<Float32>.stride)
-    let inputSampleRate = Double(DEFAULT_RATE)
-    let circularBufferLength = UInt32(DEFAULT_BUFFER_LENGTH)
+    let inputSampleRate = Double(RATE)
+    let circularBufferLength = UInt32(BUFFER_LENGTH)
+    let packetSize: UInt32
     
     var isPlayRequested = false
     var circularBuffer: TPCircularBuffer
@@ -29,6 +30,7 @@ class Player {
         } catch {
             print("Failed to set audio session category. Error: \(error)")
         }
+        packetSize = samplesPerPacket * floatSize * numChannels
         engine = AVAudioEngine()
         playerNode = AVAudioPlayerNode()
         inputFormat = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatFloat32, sampleRate: inputSampleRate, channels: numChannels, interleaved: true)!
@@ -44,7 +46,6 @@ class Player {
     func start() {
         isPlayRequested = true
         _TPCircularBufferInit(&circularBuffer, circularBufferLength, MemoryLayout<TPCircularBuffer>.stride)
-        iRx_start(&circularBuffer)
         do {
             try audioSession.setActive(true)
         } catch {
@@ -55,19 +56,20 @@ class Player {
         } catch {
             print("Failed to start audio engine. Error: \(error)")
         }
-        playNextData()
         playerNode.play()
+        iRx_start(&circularBuffer)
+        playNextData()
     }
     
     func playNextData() {
         if (isPlayRequested) {
-            let interleavedBuffer = AVAudioPCMBuffer(pcmFormat: inputFormat, frameCapacity: frameCapacity)!
-            let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: frameCapacity)!
+            let interleavedBuffer = AVAudioPCMBuffer(pcmFormat: inputFormat, frameCapacity: samplesPerPacket)!
+            let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: samplesPerPacket)!
             var availableBytes: UInt32 = 0
             let inputBufferTail = TPCircularBufferTail(&circularBuffer, &availableBytes)
             if (inputBufferTail != nil) {
-                interleavedBuffer.floatChannelData![0].initialize(from: inputBufferTail!.bindMemory(to: Float.self, capacity: Int(availableBytes)), count: Int(availableBytes))//copyMemory(from: inputBufferTail!, byteCount: Int(availableBytes))
-                interleavedBuffer.frameLength = AVAudioFrameCount(availableBytes / floatSize / numChannels)
+                interleavedBuffer.floatChannelData![0].initialize(from: inputBufferTail!.bindMemory(to: Float.self, capacity: Int(samplesPerPacket)), count: Int(samplesPerPacket))//copyMemory(from: inputBufferTail!, byteCount: Int(packetSize))
+                interleavedBuffer.frameLength = AVAudioFrameCount(samplesPerPacket)
                 var frameLength = interleavedBuffer.frameLength
                 var bytesize = interleavedBuffer.audioBufferList[0].mBuffers.mDataByteSize
                 do {
@@ -79,14 +81,9 @@ class Player {
             let bufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
             print(bufferListPointer[0])
             print(bufferListPointer[1])
-            print(bufferListPointer.unsafeMutablePointer.pointee.mBuffers.mDataByteSize)
-            print(bufferListPointer.unsafeMutablePointer.advanced(by: 1).pointee.mBuffers.mDataByteSize)
             print("interleavedBuffer.frameLength = \(interleavedBuffer.frameLength)")
             print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
-            print("outputBuffer.mutableAudioBufferList[0].mBuffers.mDataByteSize = \(outputBuffer.mutableAudioBufferList[0].mBuffers.mDataByteSize)")
-            print("outputBuffer.mutableAudioBufferList[1].mBuffers.mDataByteSize = \(outputBuffer.mutableAudioBufferList[1].mBuffers.mDataByteSize)")
-            print("outputBuffer.mutableAudioBufferList.pointee.mNumberBuffers = \(outputBuffer.mutableAudioBufferList.pointee.mNumberBuffers)")
-            TPCircularBufferConsume(&circularBuffer, availableBytes)
+            TPCircularBufferConsume(&circularBuffer, availableBytes >= packetSize ? packetSize : availableBytes)
             playerNode.scheduleBuffer(outputBuffer, completionHandler: playNextData)
         }
     }
@@ -96,7 +93,6 @@ class Player {
         playerNode.stop()
         engine.stop()
         iRx_stop()
-
         do {
             try audioSession.setActive(false)
         } catch {
