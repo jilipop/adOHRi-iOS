@@ -70,8 +70,6 @@ class Player {
             if (inputBufferTail != nil) {
                 interleavedBuffer.floatChannelData![0].initialize(from: inputBufferTail!.bindMemory(to: Float.self, capacity: Int(samplesPerPacket)), count: Int(samplesPerPacket))//copyMemory(from: inputBufferTail!, byteCount: Int(packetSize))
                 interleavedBuffer.frameLength = AVAudioFrameCount(samplesPerPacket)
-                var frameLength = interleavedBuffer.frameLength
-                var bytesize = interleavedBuffer.audioBufferList[0].mBuffers.mDataByteSize
                 do {
                     try converter.convert(to: outputBuffer, from: interleavedBuffer)
                 } catch {
