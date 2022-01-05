@@ -88,7 +88,7 @@
 		52C1D8DE277A765F0081C799 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		52C1D8E0277A78C60081C799 /* ADette-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADette-Bridging-Header.h"; sourceTree = "<group>"; };
 		52C1D8E2277A78C70081C799 /* iRx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = iRx.c; sourceTree = "<group>"; };
-		52C1D8E4277A7BE30081C799 /* defaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defaults.h; sourceTree = "<group>"; };
+		52C1D8E4277A7BE30081C799 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 				520BC7422768DAA90026A815 /* LaunchScreen.storyboard */,
 				520BC7452768DAA90026A815 /* Info.plist */,
 				52C1D8DE277A765F0081C799 /* Player.swift */,
-				52C1D8E4277A7BE30081C799 /* defaults.h */,
+				52C1D8E4277A7BE30081C799 /* constants.h */,
 				52C1D8E2277A78C70081C799 /* iRx.c */,
 				52B7A9A0277CB798009ACFA5 /* iRx.h */,
 				52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */,
