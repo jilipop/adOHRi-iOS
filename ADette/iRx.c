@@ -23,8 +23,7 @@ unsigned int rate = RATE,
             jitter = JITTER,
             channels = CHANNELS,
             port = PORT,
-            referenceRate = PAYLOAD_0_REFERENCE_RATE,
-            samples = SAMPLES;
+referenceRate = PAYLOAD_0_REFERENCE_RATE;
 const char *addr = ADDR;
 
 pthread_t thread_id;
@@ -33,6 +32,7 @@ bool isPlayRequested = false;
 RtpSession *session;
 OpusDecoder *decoder;
 TPCircularBuffer *buffer;
+JBParameters jbparams;
 
 static void timestamp_jump(RtpSession *session, void *a, void *b, void *c) {
     printf("|\n");
@@ -43,13 +43,21 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
     
     RtpSession *session;
     
+    jbparams.enabled = TRUE;
+    jbparams.adaptive = TRUE;
+    jbparams.buffer_algorithm = OrtpJitterBufferBasic;
+    jbparams.nom_size = jitter;
+    jbparams.min_size = jitter;
+    jbparams.max_size = 200;
+    jbparams.max_packets = 10;
+    jbparams.refresh_ms = 200;
+    
     session = rtp_session_new(RTP_SESSION_RECVONLY);
     rtp_session_set_scheduling_mode(session, TRUE);
     rtp_session_set_blocking_mode(session, TRUE);
     rtp_session_set_local_addr(session, addr_desc, port, -1);
     rtp_session_set_connected_mode(session, FALSE);
-    rtp_session_enable_adaptive_jitter_compensation(session, TRUE);
-    rtp_session_set_jitter_compensation(session, jitter); /* ms */
+    rtp_session_set_jitter_buffer_params(session, &jbparams);
     rtp_session_set_time_jump_limit(session, jitter * 16); /* ms */
     if (rtp_session_set_payload_type(session, 0) != 0)
         abort();
@@ -67,6 +75,7 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
 static int play_one_frame(void *packet, opus_int32 len) {
     
     int numDecodedSamples;
+    unsigned int samples = 1920;
     
     float pcm[sizeof(float) * samples * channels];
     if (packet == NULL) {
@@ -78,11 +87,16 @@ static int play_one_frame(void *packet, opus_int32 len) {
         printf("opus_decode: %s\n", opus_strerror(numDecodedSamples));
         return -1;
     }
-
+    
     uint32_t decodedBytes = numDecodedSamples * channels * sizeof(float);
-    if (TPCircularBufferProduceBytes(buffer, pcm, decodedBytes) == false)
-        printf("Error: Circular buffer overflow.\n");
-
+    printf("decoded samples: %d\n", numDecodedSamples);
+    printf("bytes decoded: %d\n", decodedBytes);
+    
+    if (packet != NULL) {
+        if (TPCircularBufferProduceBytes(buffer, pcm, decodedBytes) == false)
+            printf("Error: Circular buffer overflow.\n");
+    }
+        
     return numDecodedSamples;
 }
 
@@ -104,12 +118,10 @@ static void *run_rx() {
             packet = buf;
             printf(".\n");
         }
-
         int numDecodedSamples = play_one_frame(packet, numBytesReceived);
         if (numDecodedSamples == -1)
             printf("Error: numDecodedSamples is -1.\n");
 
-        //printf("timestamp interval is %d", numDecodedSamples * referenceRate / rate);
         timestamp += numDecodedSamples * referenceRate / rate;
     }
     return NULL;
@@ -117,16 +129,22 @@ static void *run_rx() {
 
 static void iRx_init() {
     int error;
-
-    decoder = opus_decoder_create(rate, channels, &error);
+    
     if (decoder == NULL) {
-        printf("opus_decoder_create: %s\n",
-            opus_strerror(error));
-        return;
+        decoder = opus_decoder_create(rate, channels, &error);
+        if (decoder == NULL) {
+            printf("opus_decoder_create: %s\n",
+                opus_strerror(error));
+            return;
+        }
     }
-    ortp_init();
-    ortp_scheduler_init();
-    session = create_rtp_recv(addr, port, jitter);
+
+    if (session == NULL) {
+        ortp_set_log_level("iRx", 1);
+        ortp_init();
+        ortp_scheduler_init();
+        session = create_rtp_recv(addr, port, jitter);
+    }
 }
 
 void iRx_start(TPCircularBuffer *circularBuffer) {
@@ -136,16 +154,32 @@ void iRx_start(TPCircularBuffer *circularBuffer) {
     pthread_create(&thread_id, NULL, run_rx, NULL);
 }
 
-static void iRx_deinit() {
+void iRx_deinit() {
     rtp_session_destroy(session);
     ortp_exit();
     opus_decoder_destroy(decoder);
 }
 
 void iRx_stop() {
+    ortp_global_stats_display();
+    const jitter_stats_t *jitter_stats = rtp_session_get_jitter_stats(session);
+    printf("jitter: %u\n", jitter_stats->jitter);
+    printf("max jitter: %u\n", jitter_stats->max_jitter);
+    printf("sum jitter: %llu\n", jitter_stats->sum_jitter);
+    printf("max jitter timestamp: %llu\n", jitter_stats->max_jitter_ts);
+    printf("jitter buffer size ms: %f\n", jitter_stats->jitter_buffer_size_ms);
+    printf("jitter buffer enabled? %hhu\n", rtp_session_jitter_buffer_enabled(session));
+    printf("adaptive jitter compensation enabled? %hhu\n", rtp_session_adaptive_jitter_compensation_enabled(session));
+    rtp_session_get_jitter_buffer_params(session, &jbparams);
+    printf("jitter buffer params – buffer algorithm: %d\n", jbparams.buffer_algorithm);
+    printf("jitter buffer params – nom size: %d\n", jbparams.nom_size);
+    printf("jitter buffer params – min size: %d\n", jbparams.min_size);
+    printf("jitter buffer params – max size: %d\n", jbparams.max_size);
+    printf("jitter buffer params – max packets: %d\n", jbparams.max_packets);
+    printf("jitter buffer params - refresh ms: %d\n", jbparams.refresh_ms);
+    
     isPlayRequested = false;
     errno = 0;
     if (pthread_join(thread_id, NULL) != 0)
         printf("%s\n",strerror(errno));
-    iRx_deinit();
 }
