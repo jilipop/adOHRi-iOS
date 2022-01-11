@@ -70,19 +70,10 @@ class Player {
         if inputBufferTail != nil {
             let sampleCount = Int(availableBytes / numSchedulers / floatSize)
             let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: sampleCount)
-            for i in stride(from: 0, to: sampleCount - 2, by: 2) {
-                outputBuffer.floatChannelData![0]
-                    .advanced(by: i/2)
-                    .initialize(to: tailFloatPointer
-                                    .advanced(by: i)
-                                    .pointee)
-            }
-            for i in stride(from: 1, to: sampleCount - 1, by: 2) {
-                outputBuffer.floatChannelData![1]
-                    .advanced(by: i/2)
-                    .initialize(to: tailFloatPointer
-                                    .advanced(by: i)
-                                    .pointee)
+            for channel in 0..<Int(numChannels) {
+                for sampleIndex in 0..<sampleCount {
+                    outputBuffer.floatChannelData![channel][sampleIndex] = tailFloatPointer[sampleIndex * Int(numChannels) + channel]
+                }
             }
             outputBuffer.frameLength = AVAudioFrameCount(sampleCount / Int(numChannels))
             let outputBufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
