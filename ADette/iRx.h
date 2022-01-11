@@ -8,6 +8,7 @@
 #include <string.h>
 #include <opus/opus.h>
 #include <ortp/ortp.h>
+#include <bctoolbox/logging.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <pthread.h>
@@ -17,5 +18,6 @@
 
 void iRx_start(TPCircularBuffer *buffer);
 void iRx_stop(void);
+void iRx_deinit(void);
 
 #endif /* iRx_h */
