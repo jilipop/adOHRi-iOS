@@ -58,6 +58,7 @@ class Player {
             print("Failed to start audio engine. Error: \(error)")
         }
         
+        
         for _ in 1...numSchedulers {
             scheduleNextData()
         }
@@ -95,14 +96,17 @@ class Player {
     
     func stop() {
         isPlayRequested = false
-        playerNode.stop()
-        engine.stop()
-        do {
-            try audioSession.setActive(false)
-        } catch {
-            print("Failed to stop audio session. Error: \(error)")
-        }
         iRx_stop()
-        TPCircularBufferCleanup(&circularBuffer)
+        //TODO: properly wait for buffer schedulers to end instead of placing a delay here
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.04) {
+            self.playerNode.stop()
+            self.engine.stop()
+            do {
+                try self.audioSession.setActive(false)
+            } catch {
+                print("Failed to stop audio session. Error: \(error)")
+            }
+            TPCircularBufferCleanup(&self.circularBuffer)
+        }
     }
 }
