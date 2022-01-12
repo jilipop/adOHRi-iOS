@@ -3,18 +3,19 @@ import AVFAudio
 
 class Player {
     let audioSession = AVAudioSession.sharedInstance()
-    let engine: AVAudioEngine
+    let engine = AVAudioEngine()
+    let playerNode = AVAudioPlayerNode()
     let outputFormat: AVAudioFormat
-    let playerNode: AVAudioPlayerNode
     let frameSize = UInt32(FRAME_SIZE)
     let numChannels = UInt32(CHANNELS)
     let floatSize = UInt32(MemoryLayout<Float32>.stride)
     let sampleRate = Double(RATE)
     let bufferLength = UInt32(BUFFER_LENGTH)
     let numSchedulers: UInt32 = 2
+    let schedulerGroup = DispatchGroup()
     
     var isPlayRequested = false
-    var circularBuffer: TPCircularBuffer
+    var circularBuffer = TPCircularBuffer()
     var availableBytes: UInt32 = 0
         
     init() {
@@ -29,10 +30,7 @@ class Player {
         } catch {
             print("Failed to set audio session category. Error: \(error)")
         }
-        engine = AVAudioEngine()
-        playerNode = AVAudioPlayerNode()
         outputFormat = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: numChannels)!
-        circularBuffer = TPCircularBuffer()
         
         engine.attach(playerNode)
         engine.connect(playerNode, to: engine.outputNode, format: outputFormat)
