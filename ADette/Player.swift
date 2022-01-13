@@ -21,11 +21,7 @@ class Player {
     init() {
         print("player initializing")
         do {
-            if #available(iOS 11.0, *) {
-                try audioSession.setCategory(.playback, mode: .spokenAudio, policy: .longForm)
-            } else {
-                try audioSession.setCategory(.playback, mode: .spokenAudio)
-            }
+            try audioSession.setCategory(.playback, mode: .spokenAudio, policy: .longForm)
             print("audio session category set successfully")
         } catch {
             print("Failed to set audio session category. Error: \(error)")
