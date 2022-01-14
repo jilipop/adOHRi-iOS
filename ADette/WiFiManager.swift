@@ -6,6 +6,10 @@ class WiFiManager {
     let wiFiCredentials = NEHotspotConfiguration(ssid: "Audio-Deskription", passphrase: "klappeauf!", isWEP: false)
     let config = NEHotspotConfigurationManager()
     
+    init() {
+        wiFiCredentials.lifeTimeInDays = 1
+    }
+    
     func isADConnected() -> Bool {
         var ssid: String?
         if let interfaces = CNCopySupportedInterfaces() as NSArray? {
