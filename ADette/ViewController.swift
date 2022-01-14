@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ADette
-//
-//  Created by Test on 14.12.21.
-//
-
 import UIKit
 import AVFAudio
 
@@ -28,9 +21,7 @@ class ViewController: UIViewController {
             sender.setTitle("Audiodeskription stoppen", for: UIControl.State.normal)
         } else {
             player.stop()
-            wifi.remove()
             sender.setTitle("Audiodeskription starten", for: UIControl.State.normal)
       }
     }
 }
-
