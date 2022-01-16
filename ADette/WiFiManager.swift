@@ -10,7 +10,7 @@ class WiFiManager {
         wiFiCredentials.lifeTimeInDays = 1
     }
     
-    func isADConnected() -> Bool {
+    func isConnected() -> Bool {
         var ssid: String?
         if let interfaces = CNCopySupportedInterfaces() as NSArray? {
             for interface in interfaces {

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBAction func playStopAction(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected {
-            if !wifi.isADConnected() {
+            if !wifi.isConnected() {
                 wifi.connect()
             }
             player.start()
