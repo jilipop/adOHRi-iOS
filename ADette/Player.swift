@@ -101,6 +101,7 @@ class Player {
         } catch {
             print("Failed to stop audio session. Error: \(error)")
         }
+        //TODO: Bug – possible negative buffer fillcount on cleanup, due to "tail" value being larger than "head" value (when only silence was played?)
         TPCircularBufferCleanup(&circularBuffer)
     }
 }
