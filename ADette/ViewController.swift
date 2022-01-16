@@ -18,10 +18,11 @@ class ViewController: UIViewController {
                 wifi.connect()
             }
             player.start()
-            sender.setTitle("Audiodeskription stoppen", for: UIControl.State.normal)
+            sender.setTitle("Stoppen", for: UIControl.State.normal)
+            sender.isSelected = false
         } else {
             player.stop()
-            sender.setTitle("Audiodeskription starten", for: UIControl.State.normal)
+            sender.setTitle("Starten", for: UIControl.State.normal)
       }
     }
 }
