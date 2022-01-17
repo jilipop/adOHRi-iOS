@@ -12,17 +12,45 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playStopAction(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
-            if !wifi.isConnected() {
-                wifi.connect()
+        if !player.isPlaying() {
+            if wifi.isConnected() {
+                player.start()
+                sender.setTitle("Stoppen", for: UIControl.State.normal)
+                sender.accessibilityLabel = "Stoppen"
+                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
+                                         argument: sender)
+            } else {
+                DispatchQueue.main.async() { //these changes will appear in background during first prompt
+                    sender.isEnabled = false
+                    sender.isSelected = false
+                    sender.setTitle("Verbinde...", for: UIControl.State.normal)
+                }
+                wifi.promptUserToConnect(callback: { (accepted) -> Void in
+                    sender.setTitle("Starten", for: UIControl.State.normal) //this will appear after the system dialogs
+                    if accepted {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            if self.wifi.isConnected() {
+                                self.player.start()
+                                sender.setTitle("Stoppen", for: UIControl.State.normal)
+                                sender.accessibilityLabel = "Stoppen"
+                                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
+                                                         argument: sender)
+                            }
+                            sender.isEnabled = true
+                            sender.isSelected = true
+                        }
+                    } else {
+                        sender.isEnabled = true
+                        sender.isSelected = true
+                    }
+                })
             }
-            player.start()
-            sender.setTitle("Stoppen", for: UIControl.State.normal)
-            sender.isSelected = false
         } else {
             player.stop()
             sender.setTitle("Starten", for: UIControl.State.normal)
+            sender.accessibilityLabel = "Starten"
+                UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
+                                     argument: sender)
       }
     }
 }

@@ -3,7 +3,7 @@ import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
 
 class WiFiManager {
-    let wiFiCredentials = NEHotspotConfiguration(ssid: "Audio-Deskription", passphrase: "klappeauf!", isWEP: false)
+    let wiFiCredentials = NEHotspotConfiguration(ssid: "Audio-Deskription", passphrase: Secrets.passphrase, isWEP: false)
     let config = NEHotspotConfigurationManager()
     
     init() {
@@ -23,13 +23,17 @@ class WiFiManager {
         return ssid == wiFiCredentials.ssid ? true : false
     }
     
-    func connect() {
+    func promptUserToConnect(callback: @escaping (Bool) -> Void) {
         config.apply(wiFiCredentials) { error in
-            if let error = error {
-                print(error.localizedDescription)
+            if let error = error as NSError? {
+                if error.code == NEHotspotConfigurationError.userDenied.rawValue {
+                    print("User denied the connection.")
+                }
+                callback(false)
             }
             else {
-                print("connecting to AD wifi")
+                print("Trying to connect to AD wifi...")
+                callback(true)
             }
         }
     }
