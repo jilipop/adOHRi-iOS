@@ -33,6 +33,7 @@
 		52F1295527904944002DC967 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295427904944002DC967 /* ExternalAccessory.framework */; };
 		52F12957279082BE002DC967 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F12956279082BE002DC967 /* NetworkExtension.framework */; };
 		52F1295927908E02002DC967 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295827908E02002DC967 /* SystemConfiguration.framework */; };
+		52FEC60E279611E3001F06AF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC60D279611E3001F06AF /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		52F1295427904944002DC967 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		52F12956279082BE002DC967 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		52F1295827908E02002DC967 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52FEC60D279611E3001F06AF /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */,
 				52C1D8E0277A78C60081C799 /* ADette-Bridging-Header.h */,
 				52F1294F27904093002DC967 /* WiFiManager.swift */,
+				52FEC60D279611E3001F06AF /* Secrets.swift */,
 			);
 			path = ADette;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				520BC73C2768DAA60026A815 /* ViewController.swift in Sources */,
 				520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
+				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
