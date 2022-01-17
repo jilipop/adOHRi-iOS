@@ -36,7 +36,11 @@ class Player {
         iRx_stop()
         iRx_deinit()
     }
-        
+    
+    func isPlaying() -> Bool {
+        return isPlayRequested
+    }
+    
     func start() {
         isPlayRequested = true
         _TPCircularBufferInit(&circularBuffer, bufferLength, MemoryLayout<TPCircularBuffer>.stride)
