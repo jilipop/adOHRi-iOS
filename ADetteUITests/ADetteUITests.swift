@@ -1,10 +1,3 @@
-//
-//  ADetteUITests.swift
-//  ADetteUITests
-//
-//  Created by Test on 14.12.21.
-//
-
 import XCTest
 
 class ADetteUITests: XCTestCase {
