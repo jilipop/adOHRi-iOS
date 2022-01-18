@@ -1,10 +1,3 @@
-//
-//  ADetteTests.swift
-//  ADetteTests
-//
-//  Created by Test on 14.12.21.
-//
-
 import XCTest
 @testable import ADette
 
