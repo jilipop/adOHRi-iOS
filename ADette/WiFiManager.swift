@@ -3,10 +3,12 @@ import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
 
 class WiFiManager {
-    let wiFiCredentials = NEHotspotConfiguration(ssid: "Audio-Deskription", passphrase: Secrets.passphrase, isWEP: false)
-    let config = NEHotspotConfigurationManager()
+    private let wiFiCredentials: NEHotspotConfiguration
+    private let config: NEHotspotConfigurationManager
     
-    init() {
+    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false)) {
+        config = hotspotConfigManager
+        wiFiCredentials = hotspotConfig
         wiFiCredentials.lifeTimeInDays = 1
     }
     
