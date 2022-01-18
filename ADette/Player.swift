@@ -2,24 +2,26 @@ import Foundation
 import AVFAudio
 
 class Player {
-    let audioSession = AVAudioSession.sharedInstance()
-    let engine = AVAudioEngine()
-    let playerNode = AVAudioPlayerNode()
-    let outputFormat: AVAudioFormat
-    let frameSize = UInt32(FRAME_SIZE)
-    let numChannels = UInt32(CHANNELS)
-    let floatSize = UInt32(MemoryLayout<Float32>.stride)
-    let sampleRate = Double(RATE)
-    let bufferLength = UInt32(BUFFER_LENGTH)
-    let numSchedulers: UInt32 = 2
-    let schedulerGroup = DispatchGroup()
+    private let audioSession: AVAudioSession
+    private let engine: AVAudioEngine
+    private let playerNode: AVAudioPlayerNode
+    private let outputFormat: AVAudioFormat
+    private let frameSize = UInt32(FRAME_SIZE)
+    private let numChannels = UInt32(CHANNELS)
+    private let floatSize = UInt32(MemoryLayout<Float32>.stride)
+    private let sampleRate = Double(RATE)
+    private let bufferLength = UInt32(BUFFER_LENGTH)
+    private let numSchedulers: UInt32 = 2
+    private let schedulerGroup = DispatchGroup()
     
-    var isPlayRequested = false
-    var circularBuffer = TPCircularBuffer()
-    var availableBytes: UInt32 = 0
+    private var isPlayRequested = false
+    private var circularBuffer = TPCircularBuffer()
+    private var availableBytes: UInt32 = 0
         
-    init() {
-        print("player initializing")
+    init(audioSession: AVAudioSession = .sharedInstance(), engine: AVAudioEngine = .init(), playerNode: AVAudioPlayerNode = .init()) {
+        self.audioSession = audioSession
+        self.engine = engine
+        self.playerNode = playerNode
         do {
             try audioSession.setCategory(.playback, mode: .spokenAudio, policy: .longForm)
             print("audio session category set successfully")
@@ -63,7 +65,7 @@ class Player {
         playerNode.play()
     }
     
-    func getAndDeinterleaveNextData () -> AVAudioPCMBuffer {
+    private func getAndDeinterleaveNextData () -> AVAudioPCMBuffer {
         let inputBufferTail = TPCircularBufferTail(&circularBuffer, &availableBytes)
         let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: bufferLength)!
         if inputBufferTail != nil {
@@ -85,7 +87,7 @@ class Player {
         return outputBuffer
     }
     
-    func scheduleNextData() {
+    private func scheduleNextData() {
         if isPlayRequested {
             let outputBuffer = getAndDeinterleaveNextData()
             playerNode.scheduleBuffer(outputBuffer, completionHandler: scheduleNextData)
