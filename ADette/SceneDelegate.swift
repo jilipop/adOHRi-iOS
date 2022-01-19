@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  ADette
-//
-//  Created by Test on 14.12.21.
-//
-
 import UIKit
 
 @available(iOS 13.0, *)
