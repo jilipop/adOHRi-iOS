@@ -25,6 +25,8 @@
 		5265CF282775E43F0075380B /* bctoolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF1F2775DFD00075380B /* bctoolbox.framework */; };
 		5265CF292775E4410075380B /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; };
 		5265CF2A2775E4430075380B /* opus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF232775E0050075380B /* opus.framework */; };
+		52939A372797389E001AFA18 /* HeadphonesDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A362797389E001AFA18 /* HeadphonesDetector.swift */; };
+		52939A392798C727001AFA18 /* HeadphonesDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */; };
 		52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */; };
 		52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C1D8DC2779EC550081C799 /* AVFAudio.framework */; };
 		52C1D8DF277A765F0081C799 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8DE277A765F0081C799 /* Player.swift */; };
@@ -85,6 +87,8 @@
 		5265CF1F2775DFD00075380B /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bctoolbox.framework; sourceTree = "<group>"; };
 		5265CF212775DFF00075380B /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ortp.framework; sourceTree = "<group>"; };
 		5265CF232775E0050075380B /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
+		52939A362797389E001AFA18 /* HeadphonesDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesDetector.swift; sourceTree = "<group>"; };
+		52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesDetectorDelegate.swift; sourceTree = "<group>"; };
 		52B7A965277C8347009ACFA5 /* ADetteTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADetteTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
 		52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				52C1D8E0277A78C60081C799 /* ADette-Bridging-Header.h */,
 				52F1294F27904093002DC967 /* WiFiManager.swift */,
 				52FEC60D279611E3001F06AF /* Secrets.swift */,
+				52939A362797389E001AFA18 /* HeadphonesDetector.swift */,
+				52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */,
 			);
 			path = ADette;
 			sourceTree = "<group>";
@@ -352,12 +358,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F1295027904093002DC967 /* WiFiManager.swift in Sources */,
+				52939A372797389E001AFA18 /* HeadphonesDetector.swift in Sources */,
 				52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */,
 				52C1D8DF277A765F0081C799 /* Player.swift in Sources */,
 				52C1D8E3277A78C70081C799 /* iRx.c in Sources */,
 				520BC73C2768DAA60026A815 /* ViewController.swift in Sources */,
 				520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
+				52939A392798C727001AFA18 /* HeadphonesDetectorDelegate.swift in Sources */,
 				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
