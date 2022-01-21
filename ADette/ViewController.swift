@@ -43,20 +43,19 @@ class ViewController: UIViewController, HeadphonesDetectorDelegate {
             player.stop()
             caption = "Starten"
         }
-        sender.setTitle(caption, for: UIControl.State.normal)
+        sender.setTitle(caption, for: .normal)
         sender.accessibilityLabel = caption
-            UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
-                                 argument: sender)
+        UIAccessibility.post(notification: .layoutChanged, argument: sender)
     }
     
     private func tryToConnectAndPlay(_ sender: UIButton) {
         DispatchQueue.main.async { //these changes will appear in background during first prompt
             sender.isEnabled = false
             sender.isSelected = false
-            sender.setTitle("Verbinde...", for: UIControl.State.normal)
+            sender.setTitle("Verbinde...", for: .normal)
         }
         wifi.promptUserToConnect(callback: { (accepted) -> Void in
-            sender.setTitle("Starten", for: UIControl.State.normal) //this will appear after the system dialogs
+            sender.setTitle("Starten", for: .normal) //this will appear after the system dialogs
             if accepted {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     if self.wifi.isConnected() {
