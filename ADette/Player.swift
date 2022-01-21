@@ -93,7 +93,6 @@ class Player {
     }
     
     func stop() {
-        print("player.stop() called")
         isPlayRequested = false
         iRx_stop()
         playerNode.stop()
