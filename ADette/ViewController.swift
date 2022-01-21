@@ -1,55 +1,81 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HeadphonesDetectorDelegate {
+    var player = Player()
+    var wifi = WiFiManager()
+    var headphonesDetector: HeadphonesDetector?
     
-    let player = Player()
-    let wifi = WiFiManager()
+    @IBOutlet var startStopButton: UIButton!
+    
+    enum playerAction {
+        case start, stop
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        headphonesDetector = HeadphonesDetector()
+        headphonesDetector?.delegate = self
+        
+        headphonesDetector?.setupNotification()
+        headphonesDetector?.checkCurrentState()
     }
     
     @IBAction func playStopAction(_ sender: UIButton) {
-        if !player.isPlaying() {
+        if player.isPlaying() {
+            togglePlayer(sender, action: playerAction.stop)
+        } else {
+            //TODO: Check if headphones are connected and react to result
             if wifi.isConnected() {
-                player.start()
-                sender.setTitle("Stoppen", for: UIControl.State.normal)
-                sender.accessibilityLabel = "Stoppen"
-                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
-                                         argument: sender)
+                togglePlayer(sender, action: playerAction.start)
             } else {
-                DispatchQueue.main.async() { //these changes will appear in background during first prompt
-                    sender.isEnabled = false
-                    sender.isSelected = false
-                    sender.setTitle("Verbinde...", for: UIControl.State.normal)
-                }
-                wifi.promptUserToConnect(callback: { (accepted) -> Void in
-                    sender.setTitle("Starten", for: UIControl.State.normal) //this will appear after the system dialogs
-                    if accepted {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            if self.wifi.isConnected() {
-                                self.player.start()
-                                sender.setTitle("Stoppen", for: UIControl.State.normal)
-                                sender.accessibilityLabel = "Stoppen"
-                                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
-                                                         argument: sender)
-                            }
-                            sender.isEnabled = true
-                            sender.isSelected = true
-                        }
-                    } else {
-                        sender.isEnabled = true
-                        sender.isSelected = true
-                    }
-                })
+                tryToConnectAndPlay(sender)
             }
+        }
+    }
+    
+    private func togglePlayer(_ sender: UIButton, action: playerAction) {
+        var caption: String
+        if case .start = action {
+            player.start()
+            caption = "Stoppen"
         } else {
             player.stop()
-            sender.setTitle("Starten", for: UIControl.State.normal)
-            sender.accessibilityLabel = "Starten"
-                UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
-                                     argument: sender)
-      }
+            caption = "Starten"
+        }
+        sender.setTitle(caption, for: UIControl.State.normal)
+        sender.accessibilityLabel = caption
+            UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
+                                 argument: sender)
+    }
+    
+    private func tryToConnectAndPlay(_ sender: UIButton) {
+        DispatchQueue.main.async { //these changes will appear in background during first prompt
+            sender.isEnabled = false
+            sender.isSelected = false
+            sender.setTitle("Verbinde...", for: UIControl.State.normal)
+        }
+        wifi.promptUserToConnect(callback: { (accepted) -> Void in
+            sender.setTitle("Starten", for: UIControl.State.normal) //this will appear after the system dialogs
+            if accepted {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    if self.wifi.isConnected() {
+                        self.togglePlayer(sender, action: playerAction.start)
+                    }
+                    sender.isEnabled = true
+                    sender.isSelected = true
+                }
+            } else {
+                sender.isEnabled = true
+                sender.isSelected = true
+            }
+        })
+    }
+    
+    func headphonesDidDisconnect(_ sender: HeadphonesDetector) {
+        if player.isPlaying() {
+            togglePlayer(startStopButton, action: playerAction.stop)
+            print("stopping player because headphones were disconnected")
+        }
     }
 }
