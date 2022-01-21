@@ -18,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-vr-Sig">
-                                <rect key="frame" x="146.5" y="420.5" width="121" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <button opaque="NO" contentMode="center" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-vr-Sig">
+                                <rect key="frame" x="150.5" y="420.5" width="113" height="55"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
+                                <inset key="titleEdgeInsets" minX="-32" minY="0.0" maxX="-32" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Starten"/>
                                 <connections>
@@ -35,6 +36,10 @@
                             <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qrz-cw-ila"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="StartStopButton" destination="RYQ-vr-Sig" id="SQH-NM-OvR"/>
+                        <outlet property="startStopButton" destination="RYQ-vr-Sig" id="y1j-Mc-WhD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
