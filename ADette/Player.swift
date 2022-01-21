@@ -12,7 +12,6 @@ class Player {
     private let sampleRate = Double(RATE)
     private let bufferLength = UInt32(BUFFER_LENGTH)
     private let numSchedulers: UInt32 = 2
-    private let schedulerGroup = DispatchGroup()
     
     private var isPlayRequested = false
     private var circularBuffer = TPCircularBuffer()
@@ -59,7 +58,6 @@ class Player {
         }
         
         for _ in 1...numSchedulers {
-            schedulerGroup.enter()
             scheduleNextData()
         }
         playerNode.play()
@@ -88,18 +86,16 @@ class Player {
     }
     
     private func scheduleNextData() {
+        let outputBuffer = getAndDeinterleaveNextData()
         if isPlayRequested {
-            let outputBuffer = getAndDeinterleaveNextData()
             playerNode.scheduleBuffer(outputBuffer, completionHandler: scheduleNextData)
-        } else {
-            schedulerGroup.leave()
         }
     }
     
     func stop() {
+        print("player.stop() called")
         isPlayRequested = false
         iRx_stop()
-        schedulerGroup.wait()
         playerNode.stop()
         engine.stop()
         do {
