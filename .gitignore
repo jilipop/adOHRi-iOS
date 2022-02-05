@@ -1,0 +1,4 @@
+.DS_Store
+ADette/Secrets.swift
+build/
+*.xcodeproj/xcuserdata/
