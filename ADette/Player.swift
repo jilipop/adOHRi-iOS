@@ -58,11 +58,15 @@ class Player {
             try audioSession.setActive(true)
         } catch {
             print("Failed to start audio session. Error: \(error)")
+            isPlayRequested = false
+            return
         }
         do {
             try engine.start()
         } catch {
             print("Failed to start audio engine. Error: \(error)")
+            isPlayRequested = false
+            return
         }
         
         for _ in 1...numSchedulers {
