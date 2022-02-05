@@ -18,7 +18,7 @@ class WiFiManager: InterruptionNotifier {
 
         reachability.whenUnreachable = { _ in
             if !self.isConnected() {
-                self.sendInterruptionNotification(cause: .wiFiDisconnected)
+                self.interruptionDidOccur(cause: .wiFiDisconnected)
             }
         }
         do {
@@ -60,7 +60,7 @@ class WiFiManager: InterruptionNotifier {
         config.removeConfiguration(forSSID: wiFiCredentials.ssid)
     }
     
-    func sendInterruptionNotification(cause: InterruptionCause) {
+    func interruptionDidOccur(cause: InterruptionCause) {
         delegate?.reactToInterruption(self, cause: cause)
     }
 }

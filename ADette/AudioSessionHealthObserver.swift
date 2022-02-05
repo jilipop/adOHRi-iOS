@@ -80,12 +80,12 @@ class AudioSessionHealthObserver: InterruptionNotifier {
                 if hasWiredHeadphones(in: previousRoute) {
                     print("headphones were unplugged")
                     DispatchQueue.main.async {
-                        self.sendInterruptionNotification(cause: .wiredHeadphonesDisconnected)
+                        self.interruptionDidOccur(cause: .wiredHeadphonesDisconnected)
                     }
                 } else if hasBluetoothOutput(in: previousRoute) {
                     print("bluetooth output device was disconnected")
                     DispatchQueue.main.async {
-                        self.sendInterruptionNotification(cause: .bluetoothOutputDisconnected)
+                        self.interruptionDidOccur(cause: .bluetoothOutputDisconnected)
                     }
                 }
             }
@@ -103,7 +103,7 @@ class AudioSessionHealthObserver: InterruptionNotifier {
 
         if case .began = type {
             DispatchQueue.main.async {
-                self.sendInterruptionNotification(cause: .audioSessionStopped)
+                self.interruptionDidOccur(cause: .audioSessionStopped)
             }
         }
     }
@@ -121,7 +121,7 @@ class AudioSessionHealthObserver: InterruptionNotifier {
             }).isEmpty
     }
     
-    func sendInterruptionNotification(cause: InterruptionCause) {
+    func interruptionDidOccur(cause: InterruptionCause) {
         delegate?.reactToInterruption(self, cause: cause)
     }
 }
