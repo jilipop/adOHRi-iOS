@@ -24,6 +24,9 @@ class ViewController: UIViewController, InterruptionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startStopButton.layer.cornerRadius = 10
+        
         sessionHealth = AudioSessionHealthObserver()
         sessionHealth?.delegate = self
         wiFi.delegate = self
