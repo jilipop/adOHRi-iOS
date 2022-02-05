@@ -23,6 +23,8 @@
 			</array>
 		</dict>
 	</dict>
+	<key>CFBundleSpokenName</key>
+	<string>Adett</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
