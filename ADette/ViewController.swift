@@ -1,6 +1,7 @@
 import UIKit
 
-class ViewController: UIViewController, HeadphonesDetectorDelegate {
+class ViewController: UIViewController, InterruptionDelegate {
+    
     var player = Player()
     var wiFi = WiFiManager()
     var sessionHealth: AudioSessionHealthObserver?
