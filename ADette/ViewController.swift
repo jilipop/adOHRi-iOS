@@ -109,7 +109,7 @@ class ViewController: UIViewController, InterruptionDelegate {
     @objc private func handleReturnToForeground() {
         if player.isPlaying() {
             if !wiFi.isConnected()
-                || !(sessionHealth?.areHeadphonesConnected() ?? false)
+                || !(sessionHealth?.areHeadphonesConnected() ?? true)
                 || !player.isEngineRunning() {
                 togglePlayer(startStopButton, action: playerAction.stop)
                 print("The play/stop button was reset because an interruption occurred while the app was in the background.")
