@@ -16,6 +16,9 @@
 		520BC74F2768DAA90026A815 /* ADetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC74E2768DAA90026A815 /* ADetteTests.swift */; };
 		520BC7592768DAA90026A815 /* ADetteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC7582768DAA90026A815 /* ADetteUITests.swift */; };
 		520BC75B2768DAA90026A815 /* ADetteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC75A2768DAA90026A815 /* ADetteUITestsLaunchTests.swift */; };
+		525F0843279B207400D704D7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0842279B207400D704D7 /* Toast.swift */; };
+		525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0846279B696000D704D7 /* InterruptionCause.swift */; };
+		5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */; };
 		5265CF202775DFD00075380B /* bctoolbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF1F2775DFD00075380B /* bctoolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5265CF222775DFF00075380B /* ortp.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5265CF242775E0050075380B /* opus.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF232775E0050075380B /* opus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -25,12 +28,13 @@
 		5265CF282775E43F0075380B /* bctoolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF1F2775DFD00075380B /* bctoolbox.framework */; };
 		5265CF292775E4410075380B /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; };
 		5265CF2A2775E4430075380B /* opus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF232775E0050075380B /* opus.framework */; };
-		52939A372797389E001AFA18 /* HeadphonesDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A362797389E001AFA18 /* HeadphonesDetector.swift */; };
-		52939A392798C727001AFA18 /* HeadphonesDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */; };
+		52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */; };
+		52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A382798C727001AFA18 /* InterruptionDelegate.swift */; };
 		52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */; };
 		52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C1D8DC2779EC550081C799 /* AVFAudio.framework */; };
 		52C1D8DF277A765F0081C799 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8DE277A765F0081C799 /* Player.swift */; };
 		52C1D8E3277A78C70081C799 /* iRx.c in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8E2277A78C70081C799 /* iRx.c */; };
+		52E64EEA27A6FA4D0060273A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64EE927A6FA4D0060273A /* Reachability.swift */; };
 		52F1295027904093002DC967 /* WiFiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1294F27904093002DC967 /* WiFiManager.swift */; };
 		52F1295527904944002DC967 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295427904944002DC967 /* ExternalAccessory.framework */; };
 		52F12957279082BE002DC967 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F12956279082BE002DC967 /* NetworkExtension.framework */; };
@@ -84,11 +88,14 @@
 		520BC7542768DAA90026A815 /* ADetteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADetteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520BC7582768DAA90026A815 /* ADetteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetteUITests.swift; sourceTree = "<group>"; };
 		520BC75A2768DAA90026A815 /* ADetteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		525F0842279B207400D704D7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		525F0846279B696000D704D7 /* InterruptionCause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionCause.swift; sourceTree = "<group>"; };
+		5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionNotifier.swift; sourceTree = "<group>"; };
 		5265CF1F2775DFD00075380B /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bctoolbox.framework; sourceTree = "<group>"; };
 		5265CF212775DFF00075380B /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ortp.framework; sourceTree = "<group>"; };
 		5265CF232775E0050075380B /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
-		52939A362797389E001AFA18 /* HeadphonesDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesDetector.swift; sourceTree = "<group>"; };
-		52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesDetectorDelegate.swift; sourceTree = "<group>"; };
+		52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionHealthObserver.swift; sourceTree = "<group>"; };
+		52939A382798C727001AFA18 /* InterruptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionDelegate.swift; sourceTree = "<group>"; };
 		52B7A965277C8347009ACFA5 /* ADetteTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADetteTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
 		52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 		52C1D8E0277A78C60081C799 /* ADette-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADette-Bridging-Header.h"; sourceTree = "<group>"; };
 		52C1D8E2277A78C70081C799 /* iRx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = iRx.c; sourceTree = "<group>"; };
 		52C1D8E4277A7BE30081C799 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		52E64EE927A6FA4D0060273A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		52F1294F27904093002DC967 /* WiFiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiManager.swift; sourceTree = "<group>"; };
 		52F12951279041C5002DC967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		52F12952279041C5002DC967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -179,13 +187,14 @@
 				52C1D8E4277A7BE30081C799 /* constants.h */,
 				52C1D8E2277A78C70081C799 /* iRx.c */,
 				52B7A9A0277CB798009ACFA5 /* iRx.h */,
-				52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */,
-				52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */,
 				52C1D8E0277A78C60081C799 /* ADette-Bridging-Header.h */,
 				52F1294F27904093002DC967 /* WiFiManager.swift */,
 				52FEC60D279611E3001F06AF /* Secrets.swift */,
-				52939A362797389E001AFA18 /* HeadphonesDetector.swift */,
-				52939A382798C727001AFA18 /* HeadphonesDetectorDelegate.swift */,
+				52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */,
+				52939A382798C727001AFA18 /* InterruptionDelegate.swift */,
+				525F0846279B696000D704D7 /* InterruptionCause.swift */,
+				5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */,
+				5264ED8727AA7D5700C245C1 /* Third Party */,
 			);
 			path = ADette;
 			sourceTree = "<group>";
@@ -220,6 +229,17 @@
 				5265CF232775E0050075380B /* opus.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5264ED8727AA7D5700C245C1 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */,
+				52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */,
+				525F0842279B207400D704D7 /* Toast.swift */,
+				52E64EE927A6FA4D0060273A /* Reachability.swift */,
+			);
+			path = "Third Party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,15 +378,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F1295027904093002DC967 /* WiFiManager.swift in Sources */,
-				52939A372797389E001AFA18 /* HeadphonesDetector.swift in Sources */,
+				52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */,
+				525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */,
 				52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */,
 				52C1D8DF277A765F0081C799 /* Player.swift in Sources */,
 				52C1D8E3277A78C70081C799 /* iRx.c in Sources */,
 				520BC73C2768DAA60026A815 /* ViewController.swift in Sources */,
 				520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */,
+				5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
-				52939A392798C727001AFA18 /* HeadphonesDetectorDelegate.swift in Sources */,
+				525F0843279B207400D704D7 /* Toast.swift in Sources */,
+				52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */,
 				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
+				52E64EEA27A6FA4D0060273A /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
