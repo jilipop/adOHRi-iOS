@@ -19,6 +19,7 @@
 		525F0843279B207400D704D7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0842279B207400D704D7 /* Toast.swift */; };
 		525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0846279B696000D704D7 /* InterruptionCause.swift */; };
 		5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */; };
+		5264ED8B27AE8AD400C245C1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5264ED8A27AE8AD400C245C1 /* .gitignore */; };
 		5265CF202775DFD00075380B /* bctoolbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF1F2775DFD00075380B /* bctoolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5265CF222775DFF00075380B /* ortp.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5265CF242775E0050075380B /* opus.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF232775E0050075380B /* opus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -91,6 +92,7 @@
 		525F0842279B207400D704D7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		525F0846279B696000D704D7 /* InterruptionCause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionCause.swift; sourceTree = "<group>"; };
 		5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionNotifier.swift; sourceTree = "<group>"; };
+		5264ED8A27AE8AD400C245C1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5265CF1F2775DFD00075380B /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bctoolbox.framework; sourceTree = "<group>"; };
 		5265CF212775DFF00075380B /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ortp.framework; sourceTree = "<group>"; };
 		5265CF232775E0050075380B /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		520BC72B2768DAA60026A815 = {
 			isa = PBXGroup;
 			children = (
+				5264ED8A27AE8AD400C245C1 /* .gitignore */,
 				520BC7362768DAA60026A815 /* ADette */,
 				520BC74D2768DAA90026A815 /* ADetteTests */,
 				520BC7572768DAA90026A815 /* ADetteUITests */,
@@ -350,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5264ED8B27AE8AD400C245C1 /* .gitignore in Resources */,
 				520BC7442768DAA90026A815 /* LaunchScreen.storyboard in Resources */,
 				520BC7412768DAA90026A815 /* Assets.xcassets in Resources */,
 				520BC73F2768DAA70026A815 /* Main.storyboard in Resources */,
