@@ -5,11 +5,27 @@ import SystemConfiguration.CaptiveNetwork
 class WiFiManager {
     private let wiFiCredentials: NEHotspotConfiguration
     private let config: NEHotspotConfigurationManager
+    private let reachability: Reachability
     
-    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false)) {
-        config = hotspotConfigManager
-        wiFiCredentials = hotspotConfig
+    weak var delegate: InterruptionDelegate?
+    
+    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false), reachability: Reachability = try! Reachability()) {
+        self.config = hotspotConfigManager
+        self.wiFiCredentials = hotspotConfig
+        self.reachability = reachability
+        
         wiFiCredentials.lifeTimeInDays = 1
+
+        reachability.whenUnreachable = { _ in
+            if !self.isConnected() {
+                self.sendInterruptionNotification(type: .wiFiDisconnected)
+            }
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
     }
     
     func isConnected() -> Bool {
@@ -42,5 +58,9 @@ class WiFiManager {
     
     func remove() {
         config.removeConfiguration(forSSID: wiFiCredentials.ssid)
+    }
+    
+    func sendInterruptionNotification(type: InterruptionCause) {
+        delegate?.reactToInterruption(self, type: type)
     }
 }
