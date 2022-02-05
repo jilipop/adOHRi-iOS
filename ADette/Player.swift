@@ -34,7 +34,9 @@ class Player {
         engine.prepare()
     }
     deinit {
-        iRx_stop()
+        if isPlayRequested {
+            iRx_stop()
+        }
         iRx_deinit()
     }
     
