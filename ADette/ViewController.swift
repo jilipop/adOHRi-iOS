@@ -95,12 +95,18 @@ class ViewController: UIViewController, InterruptionDelegate {
                 
             case .wiredHeadphonesDisconnected:
                 print("Wired headphones were plugged out.")
+                view.makeToast("Die Kopfhörer wurden entfernt", duration: 3.0, position: .top)
                 
             case .bluetoothOutputDisconnected:
                 print("The Bluetooth output device was disconnected.")
+                view.makeToast("Verbindung zu den Bluetooth-Kopfhörer verloren", duration: 3.0, position: .top)
                 
             case .wiFiDisconnected:
                 print("The WiFi connection was lost.")
+                view.makeToast("WLAN-Verbindung getrennt", duration: 3.0, position: .top)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    UIAccessibility.post(notification: .announcement, argument: "WLAN-Verbindung getrennt")
+                }
             }
             togglePlayer(startStopButton, action: playerAction.stop)
         }
