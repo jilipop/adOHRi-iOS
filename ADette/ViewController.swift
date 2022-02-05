@@ -49,24 +49,21 @@ class ViewController: UIViewController, HeadphonesDetectorDelegate {
     }
     
     private func tryToConnectAndPlay(_ sender: UIButton) {
-        DispatchQueue.main.async { //these changes will appear in background during first prompt
-            sender.isEnabled = false
-            sender.isSelected = false
-            sender.setTitle("Verbinde...", for: .normal)
-        }
-        wifi.promptUserToConnect(callback: { (accepted) -> Void in
-            sender.setTitle("Starten", for: .normal) //this will appear after the system dialogs
+        startStopButton.isHidden = true
+        self.view.makeToastActivity(.center)
+        
+        wiFi.promptUserToConnect(callback: { (accepted) -> Void in
             if accepted {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     if self.wifi.isConnected() {
                         self.togglePlayer(sender, action: playerAction.start)
                     }
-                    sender.isEnabled = true
-                    sender.isSelected = true
+                    self.view.hideToastActivity()
+                    sender.isHidden = false
                 }
             } else {
-                sender.isEnabled = true
-                sender.isSelected = true
+                self.view.hideToastActivity()
+                sender.isHidden = false
             }
         })
     }
