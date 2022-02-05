@@ -1,5 +1,5 @@
 import Foundation
 
 protocol InterruptionNotifier {
-    func sendInterruptionNotification(type: InterruptionCause)
+    func sendInterruptionNotification(cause: InterruptionCause)
 }

@@ -91,9 +91,9 @@ class ViewController: UIViewController, InterruptionDelegate {
         })
     }
     
-    func reactToInterruption(_ sender: InterruptionNotifier, type: InterruptionCause) {
+    func reactToInterruption(_ sender: InterruptionNotifier, cause: InterruptionCause) {
         if player.isPlaying() {
-            switch type {
+            switch cause {
                 
             case .audioSessionStopped:
                 print("The audio session was interrupted.")
