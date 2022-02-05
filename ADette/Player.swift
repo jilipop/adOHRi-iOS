@@ -33,6 +33,8 @@ class Player {
         engine.connect(playerNode, to: engine.outputNode, format: outputFormat)
         engine.prepare()
     }
+    
+    //TODO: Is this necessary? Seems to only be run when user kills app.
     deinit {
         if isPlayRequested {
             iRx_stop()
