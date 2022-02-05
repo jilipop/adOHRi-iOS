@@ -12,6 +12,16 @@ class ViewController: UIViewController, InterruptionDelegate {
         case start, stop
     }
     
+    deinit {
+        //TODO: Test this
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil)
+        
+        wiFi.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sessionHealth = AudioSessionHealthObserver()
@@ -93,7 +103,17 @@ class ViewController: UIViewController, InterruptionDelegate {
                 print("The WiFi connection was lost.")
             }
             togglePlayer(startStopButton, action: playerAction.stop)
-            print("stopping player because headphones were disconnected")
+        }
+    }
+    
+    @objc private func handleReturnToForeground() {
+        if player.isPlaying() {
+            if !wiFi.isConnected()
+                || !(sessionHealth?.areHeadphonesConnected() ?? false)
+                || !player.isEngineRunning() {
+                togglePlayer(startStopButton, action: playerAction.stop)
+                print("The play/stop button was reset because an interruption occurred while the app was in the background.")
+            }
         }
     }
 }
