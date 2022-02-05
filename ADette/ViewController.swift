@@ -2,8 +2,8 @@ import UIKit
 
 class ViewController: UIViewController, HeadphonesDetectorDelegate {
     var player = Player()
-    var wifi = WiFiManager()
-    var headphonesDetector: HeadphonesDetector?
+    var wiFi = WiFiManager()
+    var sessionHealth: AudioSessionHealthObserver?
     
     @IBOutlet var startStopButton: UIButton!
     
@@ -13,12 +13,11 @@ class ViewController: UIViewController, HeadphonesDetectorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sessionHealth = AudioSessionHealthObserver()
+        sessionHealth?.delegate = self
+        wiFi.delegate = self
         
-        headphonesDetector = HeadphonesDetector()
-        headphonesDetector?.delegate = self
-        
-        headphonesDetector?.setupNotification()
-        headphonesDetector?.checkCurrentState()
+        setupNotification()
     }
     
     @IBAction func playStopAction(_ sender: UIButton) {
@@ -26,7 +25,7 @@ class ViewController: UIViewController, HeadphonesDetectorDelegate {
             togglePlayer(sender, action: playerAction.stop)
         } else {
             //TODO: Check if headphones are connected and react to result
-            if wifi.isConnected() {
+            if wiFi.isConnected() {
                 togglePlayer(sender, action: playerAction.start)
             } else {
                 tryToConnectAndPlay(sender)
@@ -55,7 +54,7 @@ class ViewController: UIViewController, HeadphonesDetectorDelegate {
         wiFi.promptUserToConnect(callback: { (accepted) -> Void in
             if accepted {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    if self.wifi.isConnected() {
+                    if self.wiFi.isConnected() {
                         self.togglePlayer(sender, action: playerAction.start)
                     }
                     self.view.hideToastActivity()
