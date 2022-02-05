@@ -34,6 +34,14 @@ class ViewController: UIViewController, InterruptionDelegate {
         }
     }
     
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleReturnToForeground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil)
+    }
+    
     private func togglePlayer(_ sender: UIButton, action: playerAction) {
         var caption: String
         if case .start = action {
@@ -68,8 +76,22 @@ class ViewController: UIViewController, InterruptionDelegate {
         })
     }
     
-    func headphonesDidDisconnect(_ sender: HeadphonesDetector) {
+    func reactToInterruption(_ sender: InterruptionNotifier, type: InterruptionCause) {
         if player.isPlaying() {
+            switch type {
+                
+            case .audioSessionStopped:
+                print("The audio session was interrupted.")
+                
+            case .wiredHeadphonesDisconnected:
+                print("Wired headphones were plugged out.")
+                
+            case .bluetoothOutputDisconnected:
+                print("The Bluetooth output device was disconnected.")
+                
+            case .wiFiDisconnected:
+                print("The WiFi connection was lost.")
+            }
             togglePlayer(startStopButton, action: playerAction.stop)
             print("stopping player because headphones were disconnected")
         }
