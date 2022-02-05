@@ -155,9 +155,14 @@ void iRx_start(TPCircularBuffer *circularBuffer) {
 }
 
 void iRx_deinit() {
-    rtp_session_destroy(session);
-    ortp_exit();
-    opus_decoder_destroy(decoder);
+    if (session != NULL) {
+        rtp_session_destroy(session);
+        ortp_exit();
+    }
+    
+    if (decoder != NULL) {
+        opus_decoder_destroy(decoder);
+    }
 }
 
 void iRx_stop() {
