@@ -46,6 +46,10 @@ class Player {
         return isPlayRequested
     }
     
+    func isEngineRunning() -> Bool {
+        return engine.isRunning
+    }
+    
     func start() {
         isPlayRequested = true
         _TPCircularBufferInit(&circularBuffer, bufferLength, MemoryLayout<TPCircularBuffer>.stride)
