@@ -2,7 +2,7 @@ import Foundation
 import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
 
-class WiFiManager {
+class WiFiManager: InterruptionNotifier {
     private let wiFiCredentials: NEHotspotConfiguration
     private let config: NEHotspotConfigurationManager
     private let reachability: Reachability
