@@ -35,8 +35,13 @@ class ViewController: UIViewController, InterruptionDelegate {
         if player.isPlaying() {
             togglePlayer(sender, action: playerAction.stop)
         } else {
-            //TODO: Check if headphones are connected and react to result
-            if wiFi.isConnected() {
+            if !(sessionHealth?.areHeadphonesConnected() ?? true) {
+                view.makeToast("Bitte Kopfhörer verbinden", duration: 3.0, position: .top)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    UIAccessibility.post(notification: .announcement, argument: "Bitte Kopfhörer verbinden")
+                }
+            }
+            /*else*/ if wiFi.isConnected() {
                 togglePlayer(sender, action: playerAction.start)
             } else {
                 tryToConnectAndPlay(sender)
