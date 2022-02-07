@@ -19,9 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-vr-Sig">
-                                <rect key="frame" x="127" y="418" width="160" height="60"/>
+                                <rect key="frame" x="140.5" y="421.5" width="133" height="53"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Starten">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -34,10 +35,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9sz-Xo-VXZ"/>
-                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="OTM-9W-i23"/>
-                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WtD-r4-5K4"/>
-                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="374" id="tWR-Vd-ghD"/>
+                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eXK-8v-F0x"/>
+                            <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7p-Ov-0LI"/>
                         </constraints>
                     </view>
                     <connections>
