@@ -6,6 +6,8 @@ class ViewController: UIViewController, InterruptionDelegate {
     var wiFi = WiFiManager()
     var sessionHealth: AudioSessionHealthObserver?
     
+    var toastStyle = ToastStyle()
+    
     @IBOutlet var startStopButton: UIButton!
     
     enum playerAction {
@@ -26,6 +28,19 @@ class ViewController: UIViewController, InterruptionDelegate {
         super.viewDidLoad()
         
         startStopButton.layer.cornerRadius = 10
+        toastStyle.backgroundColor = .systemBlue
+        toastStyle.activityBackgroundColor = .clear
+        toastStyle.activityIndicatorColor = .black
+
+        if #available(iOS 13.0, *) {
+            toastStyle.activityIndicatorColor = UIColor.init { (traitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .dark ? .white : .black
+            }
+            toastStyle.messageColor = UIColor.init { (traitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .dark ? .black : .white
+            }
+        }
+        ToastManager.shared.style = toastStyle
         
         sessionHealth = AudioSessionHealthObserver()
         sessionHealth?.delegate = self
