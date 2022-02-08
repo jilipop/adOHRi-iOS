@@ -166,23 +166,6 @@ void iRx_deinit() {
 }
 
 void iRx_stop() {
-    ortp_global_stats_display();
-    const jitter_stats_t *jitter_stats = rtp_session_get_jitter_stats(session);
-    printf("jitter: %u\n", jitter_stats->jitter);
-    printf("max jitter: %u\n", jitter_stats->max_jitter);
-    printf("sum jitter: %llu\n", jitter_stats->sum_jitter);
-    printf("max jitter timestamp: %llu\n", jitter_stats->max_jitter_ts);
-    printf("jitter buffer size ms: %f\n", jitter_stats->jitter_buffer_size_ms);
-    printf("jitter buffer enabled? %hhu\n", rtp_session_jitter_buffer_enabled(session));
-    printf("adaptive jitter compensation enabled? %hhu\n", rtp_session_adaptive_jitter_compensation_enabled(session));
-    rtp_session_get_jitter_buffer_params(session, &jbparams);
-    printf("jitter buffer params – buffer algorithm: %d\n", jbparams.buffer_algorithm);
-    printf("jitter buffer params – nom size: %d\n", jbparams.nom_size);
-    printf("jitter buffer params – min size: %d\n", jbparams.min_size);
-    printf("jitter buffer params – max size: %d\n", jbparams.max_size);
-    printf("jitter buffer params – max packets: %d\n", jbparams.max_packets);
-    printf("jitter buffer params - refresh ms: %d\n", jbparams.refresh_ms);
-    
     isPlayRequested = false;
     errno = 0;
     if (pthread_join(thread_id, NULL) != 0)
