@@ -8,6 +8,13 @@ class ViewController: UIViewController, InterruptionDelegate {
     
     var toastStyle = ToastStyle()
     
+    let startTitle = NSLocalizedString("MainViewController.StartStopButton.Start", comment: "Text der Starten-Taste")
+    let stopTitle = NSLocalizedString("MainViewController.StartStopButton.Stop", comment: "Text der Stoppen-Taste")
+    let useHeadphones = NSLocalizedString("MainViewController.UseHeadphonesToast", comment: "Aufforderung zur Verwendung von Kopfhörern")
+    let wiredHeadphonesDisconnected = NSLocalizedString("MainViewController.WiredHeadphonesDisconnectedToast", comment: "Info beim Entfernen kabelgebundener Kopfhörer")
+    let bluetoothHeadphonesDisconnected = NSLocalizedString("MainViewController.BluetoothHeadphonesDisconnectedToast", comment: "Info bei verlorer Verbindung zu Bluetooth-Kopfhörern")
+    let wiFiDisconnected = NSLocalizedString("MainViewController.WiFiDisconnectedToast", comment: "Info bei Verlust der WLAN-Verbindung")
+    
     @IBOutlet var startStopButton: UIButton!
     
     enum playerAction {
@@ -54,9 +61,9 @@ class ViewController: UIViewController, InterruptionDelegate {
             togglePlayer(sender, action: playerAction.stop)
         } else {
             if !(sessionHealth?.areHeadphonesConnected() ?? true) {
-                view.makeToast("Bitte Kopfhörer verbinden", duration: 5.0, position: .top)
+                view.makeToast(useHeadphones, duration: 5.0, position: .top)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    UIAccessibility.post(notification: .announcement, argument: "Bitte Kopfhörer verbinden")
+                    UIAccessibility.post(notification: .announcement, argument: self.useHeadphones)
                 }
             }
             /*else*/ if wiFi.isConnected() {
@@ -79,10 +86,10 @@ class ViewController: UIViewController, InterruptionDelegate {
         var caption: String
         if case .start = action {
             player.start()
-            caption = "Stoppen"
+            caption = stopTitle
         } else {
             player.stop()
-            caption = "Starten"
+            caption = startTitle
         }
         sender.setTitle(caption, for: .normal)
         sender.accessibilityLabel = caption
@@ -118,17 +125,17 @@ class ViewController: UIViewController, InterruptionDelegate {
                 
             case .wiredHeadphonesDisconnected:
                 print("Wired headphones were plugged out.")
-                view.makeToast("Die Kopfhörer wurden entfernt", duration: 5.0, position: .top)
+                view.makeToast(wiredHeadphonesDisconnected, duration: 5.0, position: .top)
                 
             case .bluetoothOutputDisconnected:
                 print("The Bluetooth output device was disconnected.")
-                view.makeToast("Verbindung zu den Bluetooth-Kopfhörer verloren", duration: 5.0, position: .top)
+                view.makeToast(bluetoothHeadphonesDisconnected, duration: 5.0, position: .top)
                 
             case .wiFiDisconnected:
                 print("The WiFi connection was lost.")
-                view.makeToast("WLAN-Verbindung getrennt", duration: 5.0, position: .top)
+                view.makeToast(wiFiDisconnected, duration: 5.0, position: .top)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    UIAccessibility.post(notification: .announcement, argument: "WLAN-Verbindung getrennt")
+                    UIAccessibility.post(notification: .announcement, argument: self.wiFiDisconnected)
                 }
             }
             togglePlayer(startStopButton, action: playerAction.stop)
