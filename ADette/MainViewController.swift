@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, InterruptionDelegate {
+class MainViewController: UIViewController, InterruptionDelegate {
     
     var player = Player()
     var wiFi = WiFiManager()
