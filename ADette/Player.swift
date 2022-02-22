@@ -91,7 +91,10 @@ class Player {
             print(outputBufferListPointer[0])
             print(outputBufferListPointer[1])
             print("bytes in circular buffer = \(availableBytes)")
+            print("sample count = \(sampleCount)")
             print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
+            print("Circular buffer head = \(circularBuffer.head)")
+            print("Circular buffer tail before consume = \(circularBuffer.tail)")
             TPCircularBufferConsume(&circularBuffer, outputBuffer.frameLength * numChannels * floatSize)
         }
         return outputBuffer
