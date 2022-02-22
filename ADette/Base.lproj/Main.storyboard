@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Ts-wf-lOS">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <accessibilityOverrides isEnabled="YES" boldText="YES" buttonShapes="YES" dynamicTypePreference="0"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,17 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ADette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ADette" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-vr-Sig">
-                                <rect key="frame" x="140.5" y="421.5" width="133" height="53"/>
+                                <rect key="frame" x="86" y="213.5" width="148" height="53"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="71W-8V-aZ4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -39,6 +42,13 @@
                             <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7p-Ov-0LI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1Vw-qJ-mIU">
+                        <barButtonItem key="rightBarButtonItem" title="Info" image="info.circle" catalog="system" id="wFY-3b-mJ6">
+                            <connections>
+                                <segue destination="63v-Lc-KPv" kind="show" id="XS0-iw-tkI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="StartStopButton" destination="RYQ-vr-Sig" id="SQH-NM-OvR"/>
                         <outlet property="startStopButton" destination="RYQ-vr-Sig" id="y1j-Mc-WhD"/>
@@ -46,10 +56,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="83.705357142857139"/>
+        </scene>
+        <!--Info Controller-->
+        <scene sceneID="OGd-fo-QAU">
+            <objects>
+                <viewController id="63v-Lc-KPv" userLabel="Info Controller" customClass="InfoViewController" customModule="ADette" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9NM-g2-Gr5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADette Autor: Hubert Popiolek im Auftrag der AG Kurzfilm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-xH-VsR">
+                                <rect key="frame" x="49" y="244" width="222" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="1cQ-aJ-hJ4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="t0m-2z-IZK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp">
+                                <rect key="frame" x="128" y="318" width="64" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="TXj-Po-zfd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Lizenzen"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.icon" translatesAutoresizingMaskIntoConstraints="NO" id="zqk-PY-MAx">
+                                <rect key="frame" x="99.5" y="115.5" width="121" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="0wT-jf-e0z"/>
+                                    <constraint firstAttribute="height" constant="120" id="dVS-fK-Y3A"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wGg-tH-DlK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qr1-xH-VsR" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="6G5-XN-IZX"/>
+                            <constraint firstItem="zqk-PY-MAx" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="9mU-dA-3VZ"/>
+                            <constraint firstItem="zqk-PY-MAx" firstAttribute="centerY" secondItem="9NM-g2-Gr5" secondAttribute="centerY" constant="-64" id="Ims-nN-ZlL"/>
+                            <constraint firstItem="qr1-xH-VsR" firstAttribute="top" secondItem="zqk-PY-MAx" secondAttribute="bottom" constant="8" id="NPJ-Or-kEo"/>
+                            <constraint firstItem="bRb-Vq-evp" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="c1x-uP-I6e"/>
+                            <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="8" id="h9U-Pu-VDq"/>
+                            <constraint firstItem="bRb-Vq-evp" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="9NM-g2-Gr5" secondAttribute="bottom" constant="-36" id="zsP-7l-VYQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qHX-hP-PJq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpL-JO-R8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747.6923076923076" y="83.175355450236964"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LZB-1A-i4P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ts-wf-lOS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPZ-uG-z1k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4S6-Fp-gSW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99r-i9-3Ul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="info.icon" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
