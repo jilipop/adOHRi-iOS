@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC7372768DAA60026A815 /* AppDelegate.swift */; };
 		520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC7392768DAA60026A815 /* SceneDelegate.swift */; };
-		520BC73C2768DAA60026A815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC73B2768DAA60026A815 /* ViewController.swift */; };
+		520BC73C2768DAA60026A815 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC73B2768DAA60026A815 /* MainViewController.swift */; };
 		520BC73F2768DAA70026A815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520BC73D2768DAA70026A815 /* Main.storyboard */; };
 		520BC7412768DAA90026A815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520BC7402768DAA90026A815 /* Assets.xcassets */; };
 		520BC7442768DAA90026A815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520BC7422768DAA90026A815 /* LaunchScreen.storyboard */; };
 		520BC74F2768DAA90026A815 /* ADetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC74E2768DAA90026A815 /* ADetteTests.swift */; };
 		520BC7592768DAA90026A815 /* ADetteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC7582768DAA90026A815 /* ADetteUITests.swift */; };
 		520BC75B2768DAA90026A815 /* ADetteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC75A2768DAA90026A815 /* ADetteUITestsLaunchTests.swift */; };
+		5248656C27B9738200ECBF36 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248656B27B9738200ECBF36 /* InfoViewController.swift */; };
 		525F0843279B207400D704D7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0842279B207400D704D7 /* Toast.swift */; };
 		525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0846279B696000D704D7 /* InterruptionCause.swift */; };
+		5262029427BA5B080004F462 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5262029627BA5B080004F462 /* Localizable.strings */; };
 		5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */; };
 		5264ED8B27AE8AD400C245C1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5264ED8A27AE8AD400C245C1 /* .gitignore */; };
 		5265CF202775DFD00075380B /* bctoolbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5265CF1F2775DFD00075380B /* bctoolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,7 +81,7 @@
 		520BC7342768DAA60026A815 /* ADette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520BC7372768DAA60026A815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520BC7392768DAA60026A815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		520BC73B2768DAA60026A815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		520BC73B2768DAA60026A815 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		520BC73E2768DAA70026A815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		520BC7402768DAA90026A815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520BC7432768DAA90026A815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,8 +91,13 @@
 		520BC7542768DAA90026A815 /* ADetteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADetteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520BC7582768DAA90026A815 /* ADetteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetteUITests.swift; sourceTree = "<group>"; };
 		520BC75A2768DAA90026A815 /* ADetteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5248656B27B9738200ECBF36 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		525F0842279B207400D704D7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		525F0846279B696000D704D7 /* InterruptionCause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionCause.swift; sourceTree = "<group>"; };
+		5262029027BA58440004F462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		5262029127BA58440004F462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5262029527BA5B080004F462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5262029727BA5B0A0004F462 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionNotifier.swift; sourceTree = "<group>"; };
 		5264ED8A27AE8AD400C245C1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5265CF1F2775DFD00075380B /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bctoolbox.framework; sourceTree = "<group>"; };
@@ -109,8 +116,6 @@
 		52C1D8E4277A7BE30081C799 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		52E64EE927A6FA4D0060273A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		52F1294F27904093002DC967 /* WiFiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiManager.swift; sourceTree = "<group>"; };
-		52F12951279041C5002DC967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		52F12952279041C5002DC967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		52F1295327904944002DC967 /* ADette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ADette.entitlements; sourceTree = "<group>"; };
 		52F1295427904944002DC967 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		52F12956279082BE002DC967 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -181,7 +186,9 @@
 				52F1295327904944002DC967 /* ADette.entitlements */,
 				520BC7372768DAA60026A815 /* AppDelegate.swift */,
 				520BC7392768DAA60026A815 /* SceneDelegate.swift */,
-				520BC73B2768DAA60026A815 /* ViewController.swift */,
+				520BC73B2768DAA60026A815 /* MainViewController.swift */,
+				5248656B27B9738200ECBF36 /* InfoViewController.swift */,
+				5262029627BA5B080004F462 /* Localizable.strings */,
 				520BC73D2768DAA70026A815 /* Main.storyboard */,
 				520BC7402768DAA90026A815 /* Assets.xcassets */,
 				520BC7422768DAA90026A815 /* LaunchScreen.storyboard */,
@@ -329,12 +336,12 @@
 			};
 			buildConfigurationList = 520BC72F2768DAA60026A815 /* Build configuration list for PBXProject "ADette" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 				de,
+				Base,
+				en,
 			);
 			mainGroup = 520BC72B2768DAA60026A815;
 			productRefGroup = 520BC7352768DAA60026A815 /* Products */;
@@ -353,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5262029427BA5B080004F462 /* Localizable.strings in Resources */,
 				5264ED8B27AE8AD400C245C1 /* .gitignore in Resources */,
 				520BC7442768DAA90026A815 /* LaunchScreen.storyboard in Resources */,
 				520BC7412768DAA90026A815 /* Assets.xcassets in Resources */,
@@ -385,9 +393,10 @@
 				52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */,
 				525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */,
 				52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */,
+				5248656C27B9738200ECBF36 /* InfoViewController.swift in Sources */,
 				52C1D8DF277A765F0081C799 /* Player.swift in Sources */,
 				52C1D8E3277A78C70081C799 /* iRx.c in Sources */,
-				520BC73C2768DAA60026A815 /* ViewController.swift in Sources */,
+				520BC73C2768DAA60026A815 /* MainViewController.swift in Sources */,
 				520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */,
 				5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
@@ -435,7 +444,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				520BC73E2768DAA70026A815 /* Base */,
-				52F12951279041C5002DC967 /* de */,
+				5262029027BA58440004F462 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -444,9 +453,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				520BC7432768DAA90026A815 /* Base */,
-				52F12952279041C5002DC967 /* de */,
+				5262029127BA58440004F462 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5262029627BA5B080004F462 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5262029527BA5B080004F462 /* en */,
+				5262029727BA5B0A0004F462 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -510,6 +528,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = NO;
 				VALIDATE_WORKSPACE = NO;
@@ -567,6 +586,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VALIDATE_WORKSPACE = NO;
