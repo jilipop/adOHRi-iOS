@@ -114,7 +114,7 @@ class MainViewController: UIViewController, InterruptionDelegate {
                     sender.isHidden = false
                     self.navigationController?.setNavigationBarHidden(false, animated: true)
                 }
-            } else {
+            } else { //immediately instead of after 3 seconds
                 self.view.hideToastActivity()
                 sender.isHidden = false
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
