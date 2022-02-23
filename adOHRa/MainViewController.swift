@@ -60,6 +60,7 @@ class MainViewController: UIViewController, InterruptionDelegate {
     @IBAction func playStopAction(_ sender: UIButton) {
         if player.isPlaying() {
             togglePlayer(sender, action: playerAction.stop)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         } else {
             if !(sessionHealth?.areHeadphonesConnected() ?? true) {
                 view.makeToast(useHeadphones, duration: 5.0, position: .top)
@@ -70,7 +71,12 @@ class MainViewController: UIViewController, InterruptionDelegate {
             /*else*/ if wiFi.isConnected() {
                 togglePlayer(sender, action: playerAction.start)
             } else {
-                tryToConnectAndPlay(sender)
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                if wiFi.isConnected() {
+                    togglePlayer(sender, action: playerAction.start)
+                } else {
+                    tryToConnectAndPlay(sender)
+                }
             }
         }
     }
@@ -109,10 +115,12 @@ class MainViewController: UIViewController, InterruptionDelegate {
                     }
                     self.view.hideToastActivity()
                     sender.isHidden = false
+                    self.navigationController?.setNavigationBarHidden(false, animated: true)
                 }
             } else {
                 self.view.hideToastActivity()
                 sender.isHidden = false
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
             }
         })
     }
