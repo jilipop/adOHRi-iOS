@@ -1,3 +1,5 @@
-
 /* Class = "UIButton"; normalTitle = "Starten"; ObjectID = "RYQ-vr-Sig"; */
 "RYQ-vr-Sig.normalTitle" = "Starten";
+
+"MainViewController.StartStopButton.Start" = "Starten";
+"MainViewController.StartStopButton.Stop" = "Stoppen";

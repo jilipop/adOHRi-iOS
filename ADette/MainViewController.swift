@@ -35,6 +35,7 @@ class MainViewController: UIViewController, InterruptionDelegate {
         super.viewDidLoad()
         
         startStopButton.layer.cornerRadius = 10
+        startStopButton.setTitle(startTitle, for: .normal)
         toastStyle.backgroundColor = .systemBlue
         toastStyle.activityBackgroundColor = .clear
         toastStyle.activityIndicatorColor = .black
