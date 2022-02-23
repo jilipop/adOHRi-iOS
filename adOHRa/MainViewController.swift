@@ -67,9 +67,6 @@ class MainViewController: UIViewController, InterruptionDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     UIAccessibility.post(notification: .announcement, argument: self.useHeadphones)
                 }
-            }
-            /*else*/ if wiFi.isConnected() {
-                togglePlayer(sender, action: playerAction.start)
             } else {
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
                 if wiFi.isConnected() {
