@@ -50,7 +50,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="StartStopButton" destination="RYQ-vr-Sig" id="SQH-NM-OvR"/>
                         <outlet property="startStopButton" destination="RYQ-vr-Sig" id="y1j-Mc-WhD"/>
                     </connections>
                 </viewController>
