@@ -45,7 +45,7 @@
                     <navigationItem key="navigationItem" id="1Vw-qJ-mIU">
                         <barButtonItem key="rightBarButtonItem" title="Info" image="info.circle" catalog="system" id="wFY-3b-mJ6">
                             <connections>
-                                <segue destination="63v-Lc-KPv" kind="show" id="XS0-iw-tkI"/>
+                                <segue destination="63v-Lc-KPv" kind="show" id="6PV-Wb-n9W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,18 +66,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADette Autor: Hubert Popiolek im Auftrag der AG Kurzfilm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-xH-VsR">
-                                <rect key="frame" x="49" y="244" width="222" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor: Hubert Popiolek im Auftrag der AG Kurzfilm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-xH-VsR">
+                                <rect key="frame" x="49" y="273" width="222" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="1cQ-aJ-hJ4"/>
+                                    <constraint firstAttribute="height" constant="44" id="1cQ-aJ-hJ4"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="t0m-2z-IZK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp">
-                                <rect key="frame" x="128" y="318" width="64" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp" userLabel="Licences Button">
+                                <rect key="frame" x="128" y="325" width="64" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="TXj-Po-zfd"/>
                                 </constraints>
@@ -92,24 +92,40 @@
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adOHRa 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMy-3M-mPA">
+                                <rect key="frame" x="88" y="244" width="144" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="FU3-lG-C4e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wGg-tH-DlK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qr1-xH-VsR" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="6G5-XN-IZX"/>
+                            <constraint firstItem="nMy-3M-mPA" firstAttribute="top" secondItem="zqk-PY-MAx" secondAttribute="bottom" constant="8" id="8n1-dj-WWN"/>
                             <constraint firstItem="zqk-PY-MAx" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="9mU-dA-3VZ"/>
+                            <constraint firstItem="nMy-3M-mPA" firstAttribute="centerX" secondItem="qr1-xH-VsR" secondAttribute="centerX" id="CvO-eu-nDb"/>
                             <constraint firstItem="zqk-PY-MAx" firstAttribute="centerY" secondItem="9NM-g2-Gr5" secondAttribute="centerY" constant="-64" id="Ims-nN-ZlL"/>
-                            <constraint firstItem="qr1-xH-VsR" firstAttribute="top" secondItem="zqk-PY-MAx" secondAttribute="bottom" constant="8" id="NPJ-Or-kEo"/>
+                            <constraint firstItem="qr1-xH-VsR" firstAttribute="top" secondItem="nMy-3M-mPA" secondAttribute="bottom" constant="8" id="NPJ-Or-kEo"/>
                             <constraint firstItem="bRb-Vq-evp" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="c1x-uP-I6e"/>
                             <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="8" id="h9U-Pu-VDq"/>
                             <constraint firstItem="bRb-Vq-evp" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="9NM-g2-Gr5" secondAttribute="bottom" constant="-36" id="zsP-7l-VYQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qHX-hP-PJq"/>
+                    <connections>
+                        <outlet property="appNameAndVersion" destination="nMy-3M-mPA" id="jXs-Da-qmz"/>
+                        <outlet property="authorLabel" destination="qr1-xH-VsR" id="yUa-kx-dtz"/>
+                        <outlet property="licencesButton" destination="bRb-Vq-evp" id="0Ii-Dg-Gpr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpL-JO-R8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747.6923076923076" y="83.175355450236964"/>
+            <point key="canvasLocation" x="1747.5" y="82.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LZB-1A-i4P">
