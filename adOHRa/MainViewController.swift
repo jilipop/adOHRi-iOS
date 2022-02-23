@@ -84,16 +84,16 @@ class MainViewController: UIViewController, InterruptionDelegate {
     }
     
     private func togglePlayer(_ sender: UIButton, action: playerAction) {
-        var caption: String
+        var buttonTitle: String
         if case .start = action {
             player.start()
-            caption = stopTitle
+            buttonTitle = stopTitle
         } else {
             player.stop()
-            caption = startTitle
+            buttonTitle = startTitle
         }
-        sender.setTitle(caption, for: .normal)
-        sender.accessibilityLabel = caption
+        sender.setTitle(buttonTitle, for: .normal)
+        sender.accessibilityLabel = buttonTitle
         UIAccessibility.post(notification: .layoutChanged, argument: sender)
     }
     
