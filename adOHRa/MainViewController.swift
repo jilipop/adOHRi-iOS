@@ -110,16 +110,18 @@ class MainViewController: UIViewController, InterruptionDelegate {
                     if self.wiFi.isConnected() {
                         self.togglePlayer(sender, action: playerAction.start)
                     }
-                    self.view.hideToastActivity()
-                    sender.isHidden = false
-                    self.navigationController?.setNavigationBarHidden(false, animated: true)
+                    self.resetUIState()
                 }
             } else { //immediately instead of after 3 seconds
-                self.view.hideToastActivity()
-                sender.isHidden = false
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                self.resetUIState()
             }
         })
+    }
+    
+    private func resetUIState() {
+        self.view.hideToastActivity()
+        startStopButton.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func reactToInterruption(_ sender: InterruptionNotifier, cause: InterruptionCause) {
