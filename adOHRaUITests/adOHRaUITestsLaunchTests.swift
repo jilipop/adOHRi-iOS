@@ -1,6 +1,6 @@
 import XCTest
 
-class ADetteUITestsLaunchTests: XCTestCase {
+class adOHRaUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

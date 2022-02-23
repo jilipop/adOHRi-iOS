@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "520BC7332768DAA60026A815"
-               BuildableName = "ADette.app"
-               BlueprintName = "ADette"
-               ReferencedContainer = "container:ADette.xcodeproj">
+               BuildableName = "adOHRa.app"
+               BlueprintName = "adOHRa"
+               ReferencedContainer = "container:adOHRa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "520BC7492768DAA90026A815"
-               BuildableName = "ADetteTests.xctest"
-               BlueprintName = "ADetteTests"
-               ReferencedContainer = "container:ADette.xcodeproj">
+               BuildableName = "adOHRaTests.xctest"
+               BlueprintName = "adOHRaTests"
+               ReferencedContainer = "container:adOHRa.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "520BC7532768DAA90026A815"
-               BuildableName = "ADetteUITests.xctest"
-               BlueprintName = "ADetteUITests"
-               ReferencedContainer = "container:ADette.xcodeproj">
+               BuildableName = "adOHRaUITests.xctest"
+               BlueprintName = "adOHRaUITests"
+               ReferencedContainer = "container:adOHRa.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "520BC7332768DAA60026A815"
-            BuildableName = "ADette.app"
-            BlueprintName = "ADette"
-            ReferencedContainer = "container:ADette.xcodeproj">
+            BuildableName = "adOHRa.app"
+            BlueprintName = "adOHRa"
+            ReferencedContainer = "container:adOHRa.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,9 +90,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "520BC7332768DAA60026A815"
-            BuildableName = "ADette.app"
-            BlueprintName = "ADette"
-            ReferencedContainer = "container:ADette.xcodeproj">
+            BuildableName = "adOHRa.app"
+            BlueprintName = "adOHRa"
+            ReferencedContainer = "container:adOHRa.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
