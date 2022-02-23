@@ -1,0 +1,11 @@
+/* Class = "UIButton"; normalTitle = "Starten"; ObjectID = "RYQ-vr-Sig"; */
+"RYQ-vr-Sig.normalTitle" = "Start";
+
+/* Class = "UIButton"; normalTitle = "Lizenzen"; ObjectID = "bRb-Vq-evp"; */
+"bRb-Vq-evp.normalTitle" = "Licences";
+
+/* Class = "UILabel"; text = "ADette Autor: Hubert Popiolek im Auftrag der AG Kurzfilm"; ObjectID = "qr1-xH-VsR"; */
+"qr1-xH-VsR.text" = "ADette Author: Hubert Popiolek commissioned by AG Kurzfilm";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "wFY-3b-mJ6"; */
+"wFY-3b-mJ6.title" = "Info";

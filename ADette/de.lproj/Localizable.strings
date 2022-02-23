@@ -1,0 +1,11 @@
+"MainViewController.StartStopButton.Start" = "Starten";
+"MainViewController.StartStopButton.Stop" = "Stoppen";
+
+"MainViewController.UseHeadphonesToast" = "Bitte Kopfhörer benutzen";
+"MainViewController.WiredHeadphonesDisconnectedToast" = "Kopfhörer entfernt";
+"MainViewController.BluetoothHeadphonesDisconnectedToast" = "Verbindung zu Bluetooth-Kopfhörern verloren";
+"MainViewController.WiFiDisconnectedToast" = "WLAN-Verbindung verloren";
+
+"InfoViewController.AuthorLabel" = "Autor: Hubert Popiolek im Auftrag der AG Kurzfilm";
+
+"InfoViewController.LicencesButtonText" = "Lizenzen";
