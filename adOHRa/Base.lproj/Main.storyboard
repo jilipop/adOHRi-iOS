@@ -60,7 +60,7 @@
         <!--Info Controller-->
         <scene sceneID="OGd-fo-QAU">
             <objects>
-                <viewController id="63v-Lc-KPv" userLabel="Info Controller" customClass="InfoViewController" customModule="ADette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="63v-Lc-KPv" userLabel="Info Controller" customClass="InfoViewController" customModule="adOHRa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9NM-g2-Gr5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
