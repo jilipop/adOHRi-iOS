@@ -79,6 +79,7 @@ class Player {
         let inputBufferTail = TPCircularBufferTail(&circularBuffer, &availableBytes)
         let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: bufferLength)!
         if inputBufferTail != nil {
+            //TODO: This sometimes leads to odd samplecount numbers - fix it
             let sampleCount = Int(availableBytes / floatSize / numSchedulers)
             let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: sampleCount)
             for channel in 0..<Int(numChannels) {
@@ -87,14 +88,14 @@ class Player {
                 }
             }
             outputBuffer.frameLength = AVAudioFrameCount(sampleCount / Int(numChannels))
-            let outputBufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
-            print(outputBufferListPointer[0])
-            print(outputBufferListPointer[1])
+            //let outputBufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
+            //print(outputBufferListPointer[0])
+            //print(outputBufferListPointer[1])
             print("bytes in circular buffer = \(availableBytes)")
-            print("sample count = \(sampleCount)")
+            //print("sample count = \(sampleCount)")
             print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
-            print("Circular buffer head = \(circularBuffer.head)")
-            print("Circular buffer tail before consume = \(circularBuffer.tail)")
+            //print("Circular buffer head = \(circularBuffer.head)")
+            //print("Circular buffer tail before consume = \(circularBuffer.tail)")
             TPCircularBufferConsume(&circularBuffer, outputBuffer.frameLength * numChannels * floatSize)
         }
         return outputBuffer
