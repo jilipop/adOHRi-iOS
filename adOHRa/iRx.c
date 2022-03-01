@@ -28,6 +28,7 @@ const char *addr = ADDR;
 
 pthread_t thread_id;
 bool isPlayRequested = false;
+bool isInitialSilenceOver = false;
 
 RtpSession *session;
 OpusDecoder *decoder;
@@ -57,7 +58,11 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
     rtp_session_set_blocking_mode(session, TRUE);
     rtp_session_set_local_addr(session, addr_desc, port, -1);
     rtp_session_set_connected_mode(session, FALSE);
-    rtp_session_set_jitter_buffer_params(session, &jbparams);
+    
+    rtp_session_enable_adaptive_jitter_compensation(session, TRUE);
+    rtp_session_set_jitter_compensation(session, jitter);
+    //rtp_session_set_jitter_buffer_params(session, &jbparams);
+    
     rtp_session_set_time_jump_limit(session, jitter * 16); /* ms */
     if (rtp_session_set_payload_type(session, 0) != 0)
         abort();
@@ -92,11 +97,16 @@ static int play_one_frame(void *packet, opus_int32 len) {
     printf("decoded samples: %d\n", numDecodedSamples);
     printf("bytes decoded: %d\n", decodedBytes);
     
-    if (packet != NULL) {
-        if (TPCircularBufferProduceBytes(buffer, pcm, decodedBytes) == false)
-            printf("Error: Circular buffer overflow.\n");
+    if (isInitialSilenceOver == false && packet != NULL) {
+        isInitialSilenceOver = true;
     }
-        
+    
+    if (isInitialSilenceOver == true) {
+        bool dataWritten = TPCircularBufferProduceBytes(buffer, pcm, decodedBytes);
+        if (dataWritten == false) {
+            printf("Error: Circular buffer overflow.\n");
+        }
+    }
     return numDecodedSamples;
 }
 
@@ -167,6 +177,7 @@ void iRx_deinit() {
 
 void iRx_stop() {
     isPlayRequested = false;
+    isInitialSilenceOver = false;
     errno = 0;
     if (pthread_join(thread_id, NULL) != 0)
         printf("%s\n",strerror(errno));
