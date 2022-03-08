@@ -3,6 +3,8 @@ platform :ios, '11.0'
   target 'adOHRa' do
     use_frameworks!
     pod 'opus-ios'
+    pod 'TPCircularBuffer'
+    pod 'Toast-Swift', '~> 5.0.1'
   end
 
   target 'adOHRaTests' do

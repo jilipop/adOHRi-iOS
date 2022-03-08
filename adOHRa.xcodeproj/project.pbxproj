@@ -18,7 +18,6 @@
 		520BC7592768DAA90026A815 /* adOHRaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC7582768DAA90026A815 /* adOHRaUITests.swift */; };
 		520BC75B2768DAA90026A815 /* adOHRaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BC75A2768DAA90026A815 /* adOHRaUITestsLaunchTests.swift */; };
 		5248656C27B9738200ECBF36 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248656B27B9738200ECBF36 /* InfoViewController.swift */; };
-		525F0843279B207400D704D7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0842279B207400D704D7 /* Toast.swift */; };
 		525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0846279B696000D704D7 /* InterruptionCause.swift */; };
 		5262029427BA5B080004F462 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5262029627BA5B080004F462 /* Localizable.strings */; };
 		5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */; };
@@ -31,7 +30,6 @@
 		5273F79527C7B6FB00B97D35 /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5265CF212775DFF00075380B /* ortp.framework */; };
 		52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */; };
 		52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52939A382798C727001AFA18 /* InterruptionDelegate.swift */; };
-		52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */; };
 		52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C1D8DC2779EC550081C799 /* AVFAudio.framework */; };
 		52C1D8DF277A765F0081C799 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8DE277A765F0081C799 /* Player.swift */; };
 		52C1D8E3277A78C70081C799 /* iRx.c in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8E2277A78C70081C799 /* iRx.c */; };
@@ -94,7 +92,6 @@
 		520BC7582768DAA90026A815 /* adOHRaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adOHRaUITests.swift; sourceTree = "<group>"; };
 		520BC75A2768DAA90026A815 /* adOHRaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adOHRaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5248656B27B9738200ECBF36 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		525F0842279B207400D704D7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		525F0846279B696000D704D7 /* InterruptionCause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionCause.swift; sourceTree = "<group>"; };
 		5262029027BA58440004F462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5262029127BA58440004F462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -107,8 +104,6 @@
 		52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionHealthObserver.swift; sourceTree = "<group>"; };
 		52939A382798C727001AFA18 /* InterruptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionDelegate.swift; sourceTree = "<group>"; };
 		52B7A965277C8347009ACFA5 /* adOHRaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "adOHRaTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
-		52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
 		52B7A9A0277CB798009ACFA5 /* iRx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRx.h; sourceTree = "<group>"; };
 		52C1D8DC2779EC550081C799 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		52C1D8DE277A765F0081C799 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -214,7 +209,6 @@
 				52939A382798C727001AFA18 /* InterruptionDelegate.swift */,
 				525F0846279B696000D704D7 /* InterruptionCause.swift */,
 				5264ED8827AA860500C245C1 /* InterruptionNotifier.swift */,
-				5264ED8727AA7D5700C245C1 /* Third Party */,
 			);
 			path = adOHRa;
 			sourceTree = "<group>";
@@ -251,17 +245,6 @@
 				AF1153C8665DFCC520A3E9EA /* libPods-adOHRaUITests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5264ED8727AA7D5700C245C1 /* Third Party */ = {
-			isa = PBXGroup;
-			children = (
-				52B7A99F277C8B06009ACFA5 /* TPCircularBuffer.h */,
-				52B7A99D277C8B04009ACFA5 /* TPCircularBuffer.c */,
-				525F0842279B207400D704D7 /* Toast.swift */,
-				52E64EE927A6FA4D0060273A /* Reachability.swift */,
-			);
-			path = "Third Party";
 			sourceTree = "<group>";
 		};
 		A17E5C181382FB4C208AF77F /* Pods */ = {
@@ -507,7 +490,6 @@
 				52F1295027904093002DC967 /* WiFiManager.swift in Sources */,
 				52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */,
 				525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */,
-				52B7A99E277C8B04009ACFA5 /* TPCircularBuffer.c in Sources */,
 				5248656C27B9738200ECBF36 /* InfoViewController.swift in Sources */,
 				52C1D8DF277A765F0081C799 /* Player.swift in Sources */,
 				52C1D8E3277A78C70081C799 /* iRx.c in Sources */,
@@ -515,7 +497,6 @@
 				520BC7382768DAA60026A815 /* AppDelegate.swift in Sources */,
 				5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
-				525F0843279B207400D704D7 /* Toast.swift in Sources */,
 				52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */,
 				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
 				52E64EEA27A6FA4D0060273A /* Reachability.swift in Sources */,

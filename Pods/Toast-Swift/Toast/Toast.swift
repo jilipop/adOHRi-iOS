@@ -28,7 +28,7 @@ import ObjectiveC
 
 /**
  Toast is a Swift extension that adds toast notifications to the `UIView` object class.
- It is intended to be simple, lightweight, and easy to use. Most toast notifications
+ It is intended to be simple, lightweight, and easy to use. Most toast notifications 
  can be triggered with a single line of code.
  
  The `makeToast` methods create a new view and then display it as toast.

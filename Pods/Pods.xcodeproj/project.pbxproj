@@ -20,15 +20,42 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		24A3E13489A1C7C3330023850002ABED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		17E5507F92F0DF1DD5C3AB12E53F559F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DF749E635BD9942C1E6145589659E6 /* Foundation.framework */; };
+		25FB36D97BC71E619A9CF661890A27A7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6738A5D4E955CC2B67E437D09F504478 /* AudioToolbox.framework */; };
+		2C438204FE4010849A809DC32F8D44C8 /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CFBC6E3DCA9C0E705F23BC9128B38FF /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		388B4D2602A0E1A12442B64DEC973624 /* Pods-adOHRaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2AC0F18BF3EE0606D89F7E943D5CA1 /* Pods-adOHRaUITests-dummy.m */; };
+		52FC94A7B984A1A98BB9CA54557CB155 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F213B5EE5B0502D00223C818F22093AE /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		596E19543D221354EB9E5DB060A97532 /* Pods-adOHRa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E40804C07565A77FF254D30347AB49EE /* Pods-adOHRa-dummy.m */; };
+		656813C9CD95030DB315F76E458E6613 /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CDCC5E2346399ADE368E4FB024F251A /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6DFA70326D4C540DC43BD455F5A4A658 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B4FE473F26BC8981B28DBF2230CFB /* Toast-Swift-dummy.m */; };
+		7711E6C15EDB947A4B65D84CC5F4C99E /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B79AD4592D81A9AFC43DE7B75C6BB24E /* TPCircularBuffer-dummy.m */; };
+		87E3B15B2AA7D226CB60059610C1241A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2D0577BF2AF147036BFB73AA813EAD /* QuartzCore.framework */; };
+		88367AFC0AAFBC34EAC573FBA82E509F /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 985983E8D16EA01E15BC1F4EFC3B2FF9 /* TPCircularBuffer.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9A35C7514A8DBCA401F805AC55DC964D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DF749E635BD9942C1E6145589659E6 /* Foundation.framework */; };
+		A7084001A1C675C0B8CD9413868EB647 /* Pods-adOHRa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C37E36F96662853B0012D7C90CD1864 /* Pods-adOHRa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A92B04DA7EDFC161760F5286A802EF58 /* Pods-adOHRaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD91910CA52C62FAEA9226122FE90EC8 /* Pods-adOHRaTests-dummy.m */; };
-		D9E50EAEFD5EA9BB987F779640CE349E /* Pods-adOHRa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C37E36F96662853B0012D7C90CD1864 /* Pods-adOHRa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE2464D08F906C71768089E566D8E68B /* Pods-adOHRa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E40804C07565A77FF254D30347AB49EE /* Pods-adOHRa-dummy.m */; };
+		BF20C741EBB18F936CA31F2E41DC9F23 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25D5AF39E5C72EEDFEFF4F4589044BA8 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAE29563450C7ED7B9BEFD4F8C3788CA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B205AE7234D2B8A6659F87FBF4D18 /* Toast.swift */; };
+		D6F0783D127DFD27FD73792F2F8E6BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DF749E635BD9942C1E6145589659E6 /* Foundation.framework */; };
+		FF7413A1472B66526740DD52FF1005AA /* TPCircularBuffer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFD25BDA0CE9D73E3CAB54E421E295D8 /* TPCircularBuffer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9FD2CF0029DFF661B80BB0AEC0C6D292 /* PBXContainerItemProxy */ = {
+		1358BBFF7D739D05E9C51F6DFBA321DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F366479BDFA5B8FDA48D0F34F864DBB;
+			remoteInfo = TPCircularBuffer;
+		};
+		1DB6C64C074CE1CB9745906904F2EDDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
+		D98BF83E7EAD1F608E004D8847D31045 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -38,41 +65,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1378A03E20CC17A569D4F4C45E0C4062 /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
-		262A95B3AEBEC0E4AD5673DBE70EF589 /* opus-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "opus-ios.release.xcconfig"; sourceTree = "<group>"; };
+		082B205AE7234D2B8A6659F87FBF4D18 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		0977AD3D8531BF82C34E73265C7D3E43 /* TPCircularBuffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.release.xcconfig; sourceTree = "<group>"; };
+		105799D9968251C09CABB61CF754D0D2 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		1146D35CEA59C6FC629ACD979DDAD4A0 /* opus-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "opus-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		1B7B5902233C1AB573708CCC356F7231 /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDCC5E2346399ADE368E4FB024F251A /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
+		25D5AF39E5C72EEDFEFF4F4589044BA8 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
 		3200722708809634ACC0F40DE7410C0F /* Pods-adOHRa-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-adOHRa-frameworks.sh"; sourceTree = "<group>"; };
 		3475C24A00607F4FEDF41D39198BB70D /* Pods-adOHRa-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-adOHRa-acknowledgements.plist"; sourceTree = "<group>"; };
 		36816BDAFF3CDC8B8819CE61BE35D284 /* Pods-adOHRaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A902196D4A9AB71465A1DA1CBDB057A /* Pods-adOHRaTests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-adOHRaTests"; path = "libPods-adOHRaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B2E7903EAE44D2B6B54D4574A8A1946 /* opus-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "opus-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		3E1DAF95AFE7A440E5AE811B110E9652 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		3E788FD181D969EB5515D74EB7D6F71B /* TPCircularBuffer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-prefix.pch"; sourceTree = "<group>"; };
+		46F8D884F9CB62A617716F2173FB1D85 /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
 		519C282116F2D0CF0518192D196C7BD3 /* Pods-adOHRaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-adOHRaTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5729196F3869E2E1DA068A870181C360 /* Pods-adOHRaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-adOHRaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5F91D37F074DB1A48EA23072B0985A6A /* Pods-adOHRa */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-adOHRa"; path = Pods_adOHRa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6738A5D4E955CC2B67E437D09F504478 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		6A9C49F862FAFD0B27821AAA06E121EC /* Pods-adOHRa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-adOHRa.modulemap"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CFBC6E3DCA9C0E705F23BC9128B38FF /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
+		6D7B7FB760CADFF5EF0D0F20EB6B3CBC /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		73DF749E635BD9942C1E6145589659E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		752681A6576495AE488113C08E16992A /* Pods-adOHRaUITests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-adOHRaUITests"; path = "libPods-adOHRaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76BD0082B1CFD0290D1FFA7339127BD3 /* opus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opus.framework; sourceTree = "<group>"; };
 		792D76BA6916D3614470165042BAD9E3 /* Pods-adOHRaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D8BF48EB40335BD3D17F36988E12C04 /* Pods-adOHRaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRaTests.release.xcconfig"; sourceTree = "<group>"; };
+		8546D261C6AD6CC66BF08112A8F103BF /* TPCircularBuffer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TPCircularBuffer-Info.plist"; sourceTree = "<group>"; };
+		8C2D0577BF2AF147036BFB73AA813EAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8C37E36F96662853B0012D7C90CD1864 /* Pods-adOHRa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-adOHRa-umbrella.h"; sourceTree = "<group>"; };
 		8D2AC0F18BF3EE0606D89F7E943D5CA1 /* Pods-adOHRaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-adOHRaUITests-dummy.m"; sourceTree = "<group>"; };
+		985983E8D16EA01E15BC1F4EFC3B2FF9 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
+		9A0B4FE473F26BC8981B28DBF2230CFB /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABE98EA6AB477DC3A1CEA3A31C7A635F /* Pods-adOHRaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-adOHRaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AEC7358B1A637BF606D1351B9F253F97 /* Pods-adOHRaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-adOHRaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B79AD4592D81A9AFC43DE7B75C6BB24E /* TPCircularBuffer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPCircularBuffer-dummy.m"; sourceTree = "<group>"; };
 		BD91910CA52C62FAEA9226122FE90EC8 /* Pods-adOHRaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-adOHRaTests-dummy.m"; sourceTree = "<group>"; };
+		BDA0BD9A4FD766DDD1839D161C122B11 /* TPCircularBuffer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.debug.xcconfig; sourceTree = "<group>"; };
+		BFD25BDA0CE9D73E3CAB54E421E295D8 /* TPCircularBuffer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-umbrella.h"; sourceTree = "<group>"; };
+		C5926C1A93C5EDEB9876EFF7FBC7534A /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
 		CED08B9E35FBB8932B0F628C7DE52A4B /* Pods-adOHRaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A4DC22EE5FA23C5FEB519B1534F03B /* Pods-adOHRa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRa.release.xcconfig"; sourceTree = "<group>"; };
 		D297F6EAD4327DCE825F68AECF1777D0 /* Pods-adOHRa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-adOHRa.debug.xcconfig"; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E199BCEBAE132367F8A23E67D8EA6624 /* opus-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "opus-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E40804C07565A77FF254D30347AB49EE /* Pods-adOHRa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-adOHRa-dummy.m"; sourceTree = "<group>"; };
 		E6346D71A24FCCDA11AC37AE4CD3804A /* Pods-adOHRa-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-adOHRa-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E95EC7AEF33B4783A6A727D147E6B82C /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
+		F213B5EE5B0502D00223C818F22093AE /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
 		F3541376CA1AA849D80AA26959678231 /* Pods-adOHRa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-adOHRa-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0CFAA6F26F5CC61B89367B6C1F0C62C7 /* Frameworks */ = {
+		27AE6978B7DEAB3C99D6DD07D4532395 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A3E13489A1C7C3330023850002ABED /* Foundation.framework in Frameworks */,
+				17E5507F92F0DF1DD5C3AB12E53F559F /* Foundation.framework in Frameworks */,
+				87E3B15B2AA7D226CB60059610C1241A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +134,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4EB613EAF5173696C829A34AEB42DD4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6F0783D127DFD27FD73792F2F8E6BC1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A842EB21E9F65D18E9FD800429F7E870 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,14 +149,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4A3F2774BBABE4030BC2BBF703C7495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25FB36D97BC71E619A9CF661890A27A7 /* AudioToolbox.framework in Frameworks */,
+				9A35C7514A8DBCA401F805AC55DC964D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42B509F7A554D79D5764D39DC37843B6 /* Support Files */ = {
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B2E7903EAE44D2B6B54D4574A8A1946 /* opus-ios.debug.xcconfig */,
-				262A95B3AEBEC0E4AD5673DBE70EF589 /* opus-ios.release.xcconfig */,
+				D49862F24CCBD72C1778379C8BCE4A54 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E33E8DE712F2595857DE12856CFFAAE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1146D35CEA59C6FC629ACD979DDAD4A0 /* opus-ios.debug.xcconfig */,
+				E199BCEBAE132367F8A23E67D8EA6624 /* opus-ios.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/opus-ios";
@@ -116,30 +192,13 @@
 			path = "Target Support Files/Pods-adOHRaUITests";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		5F3EABDAA9718DD970C1D6ACEEE2EAED /* opus-ios */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				E32294719362093DBE8CBC7517C9144F /* Frameworks */,
+				2E33E8DE712F2595857DE12856CFFAAE /* Support Files */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		72D4D9A12E1C4BF0C9B7A1C99290A63D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1378A03E20CC17A569D4F4C45E0C4062 /* opus.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		770C6E2C46146FD1C05115A7A0D7D494 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5F91D37F074DB1A48EA23072B0985A6A /* Pods-adOHRa */,
-				3A902196D4A9AB71465A1DA1CBDB057A /* Pods-adOHRaTests */,
-				752681A6576495AE488113C08E16992A /* Pods-adOHRaUITests */,
-			);
-			name = Products;
+			path = "opus-ios";
 			sourceTree = "<group>";
 		};
 		7FFAE25735723E1024FAB86184F9AD91 /* Pods-adOHRaTests */ = {
@@ -155,6 +214,16 @@
 			path = "Target Support Files/Pods-adOHRaTests";
 			sourceTree = "<group>";
 		};
+		897ABF36AA68E2C6DC1BF0952D7E03F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F3EABDAA9718DD970C1D6ACEEE2EAED /* opus-ios */,
+				F1467D5084E475A81004EC9B104971FA /* Toast-Swift */,
+				E0D7B128F88F30FD4760368D4B2487FC /* TPCircularBuffer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AFEE8283F4DC08DA70C88436B2E79242 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,31 +234,96 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B66672BDD0D5F277B0BEBBE36E269E17 /* Pods */ = {
+		B0AE0CBE9887262D1456B0E509056CA7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FCDAB6BB1291510A8F8557DA57C85246 /* opus-ios */,
+				46F8D884F9CB62A617716F2173FB1D85 /* TPCircularBuffer.modulemap */,
+				B79AD4592D81A9AFC43DE7B75C6BB24E /* TPCircularBuffer-dummy.m */,
+				8546D261C6AD6CC66BF08112A8F103BF /* TPCircularBuffer-Info.plist */,
+				3E788FD181D969EB5515D74EB7D6F71B /* TPCircularBuffer-prefix.pch */,
+				BFD25BDA0CE9D73E3CAB54E421E295D8 /* TPCircularBuffer-umbrella.h */,
+				BDA0BD9A4FD766DDD1839D161C122B11 /* TPCircularBuffer.debug.xcconfig */,
+				0977AD3D8531BF82C34E73265C7D3E43 /* TPCircularBuffer.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/TPCircularBuffer";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B66672BDD0D5F277B0BEBBE36E269E17 /* Pods */,
-				770C6E2C46146FD1C05115A7A0D7D494 /* Products */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				897ABF36AA68E2C6DC1BF0952D7E03F8 /* Pods */,
+				F802179AEF9034AC11120F9479956B46 /* Products */,
 				AFEE8283F4DC08DA70C88436B2E79242 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D49862F24CCBD72C1778379C8BCE4A54 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				6738A5D4E955CC2B67E437D09F504478 /* AudioToolbox.framework */,
+				73DF749E635BD9942C1E6145589659E6 /* Foundation.framework */,
+				8C2D0577BF2AF147036BFB73AA813EAD /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DEC8EC55497799A818E32FA4487C87AD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				105799D9968251C09CABB61CF754D0D2 /* Toast-Swift.modulemap */,
+				9A0B4FE473F26BC8981B28DBF2230CFB /* Toast-Swift-dummy.m */,
+				C5926C1A93C5EDEB9876EFF7FBC7534A /* Toast-Swift-Info.plist */,
+				E95EC7AEF33B4783A6A727D147E6B82C /* Toast-Swift-prefix.pch */,
+				25D5AF39E5C72EEDFEFF4F4589044BA8 /* Toast-Swift-umbrella.h */,
+				3E1DAF95AFE7A440E5AE811B110E9652 /* Toast-Swift.debug.xcconfig */,
+				6D7B7FB760CADFF5EF0D0F20EB6B3CBC /* Toast-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		E0D7B128F88F30FD4760368D4B2487FC /* TPCircularBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				985983E8D16EA01E15BC1F4EFC3B2FF9 /* TPCircularBuffer.c */,
+				F213B5EE5B0502D00223C818F22093AE /* TPCircularBuffer.h */,
+				1CDCC5E2346399ADE368E4FB024F251A /* TPCircularBuffer+AudioBufferList.c */,
+				6CFBC6E3DCA9C0E705F23BC9128B38FF /* TPCircularBuffer+AudioBufferList.h */,
+				B0AE0CBE9887262D1456B0E509056CA7 /* Support Files */,
+			);
+			path = TPCircularBuffer;
+			sourceTree = "<group>";
+		};
+		E32294719362093DBE8CBC7517C9144F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76BD0082B1CFD0290D1FFA7339127BD3 /* opus.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1467D5084E475A81004EC9B104971FA /* Toast-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				082B205AE7234D2B8A6659F87FBF4D18 /* Toast.swift */,
+				DEC8EC55497799A818E32FA4487C87AD /* Support Files */,
+			);
+			path = "Toast-Swift";
+			sourceTree = "<group>";
+		};
+		F802179AEF9034AC11120F9479956B46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F91D37F074DB1A48EA23072B0985A6A /* Pods-adOHRa */,
+				3A902196D4A9AB71465A1DA1CBDB057A /* Pods-adOHRaTests */,
+				752681A6576495AE488113C08E16992A /* Pods-adOHRaUITests */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
+				1B7B5902233C1AB573708CCC356F7231 /* TPCircularBuffer.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F9BAAAC1E1DE8BC6FD50357BC832E537 /* Pods-adOHRa */ = {
@@ -209,18 +343,25 @@
 			path = "Target Support Files/Pods-adOHRa";
 			sourceTree = "<group>";
 		};
-		FCDAB6BB1291510A8F8557DA57C85246 /* opus-ios */ = {
-			isa = PBXGroup;
-			children = (
-				72D4D9A12E1C4BF0C9B7A1C99290A63D /* Frameworks */,
-				42B509F7A554D79D5764D39DC37843B6 /* Support Files */,
-			);
-			path = "opus-ios";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		63D019064C2255A3D74C25BDF1937802 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF20C741EBB18F936CA31F2E41DC9F23 /* Toast-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCDA8ED111C9B9CB2D17FAAD04F7EBE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7084001A1C675C0B8CD9413868EB647 /* Pods-adOHRa-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A79E8D560E0ED22340FAED48F8AE215E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,11 +376,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2B640F1B34B0A1EA175EF9C2FE5F834 /* Headers */ = {
+		FF5A335B7E67C6E2D295D5646101CA30 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9E50EAEFD5EA9BB987F779640CE349E /* Pods-adOHRa-umbrella.h in Headers */,
+				52FC94A7B984A1A98BB9CA54557CB155 /* TPCircularBuffer.h in Headers */,
+				2C438204FE4010849A809DC32F8D44C8 /* TPCircularBuffer+AudioBufferList.h in Headers */,
+				FF7413A1472B66526740DD52FF1005AA /* TPCircularBuffer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,23 +406,61 @@
 			productReference = 3A902196D4A9AB71465A1DA1CBDB057A /* Pods-adOHRaTests */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9F247826D741A1DA3DD0F5DE22456F99 /* Pods-adOHRa */ = {
+		3F366479BDFA5B8FDA48D0F34F864DBB /* TPCircularBuffer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1A2E51EDF36401C43AB5139335589DE /* Build configuration list for PBXNativeTarget "Pods-adOHRa" */;
+			buildConfigurationList = 7C12EF67CCD9476E87E7EC27D826E836 /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */;
 			buildPhases = (
-				D2B640F1B34B0A1EA175EF9C2FE5F834 /* Headers */,
-				90A62F33A9C094FC117033B2E9B6EFD1 /* Sources */,
-				0CFAA6F26F5CC61B89367B6C1F0C62C7 /* Frameworks */,
-				B868D13CF4877542CC6265A8324FF2B5 /* Resources */,
+				FF5A335B7E67C6E2D295D5646101CA30 /* Headers */,
+				4BB0139011856D3EA1607B2ECE1F9A5E /* Sources */,
+				B4A3F2774BBABE4030BC2BBF703C7495 /* Frameworks */,
+				5094A757D846642A8B02BF7E3A4EC46F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D4DFA15648AE75380F381B0ACD37057B /* PBXTargetDependency */,
+			);
+			name = TPCircularBuffer;
+			productName = TPCircularBuffer;
+			productReference = 1B7B5902233C1AB573708CCC356F7231 /* TPCircularBuffer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F247826D741A1DA3DD0F5DE22456F99 /* Pods-adOHRa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED1CE290BE67B90E2EEC9BD5FEBB13B /* Build configuration list for PBXNativeTarget "Pods-adOHRa" */;
+			buildPhases = (
+				7FCDA8ED111C9B9CB2D17FAAD04F7EBE /* Headers */,
+				1E7EF842450E9ABC5038A23B52DD83C6 /* Sources */,
+				4EB613EAF5173696C829A34AEB42DD4C /* Frameworks */,
+				73F733E07E21D402D48395CE6A1C7976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17C389A622F721FBD17E6FD658AC12E1 /* PBXTargetDependency */,
+				D42029A26DC5BAE724EA1A02C61EF837 /* PBXTargetDependency */,
+				2D9EB68C1AEA3FDE235820A8DED6191B /* PBXTargetDependency */,
 			);
 			name = "Pods-adOHRa";
 			productName = Pods_adOHRa;
 			productReference = 5F91D37F074DB1A48EA23072B0985A6A /* Pods-adOHRa */;
+			productType = "com.apple.product-type.framework";
+		};
+		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3393B836BCDFD5292B077E63A26DC97F /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
+			buildPhases = (
+				63D019064C2255A3D74C25BDF1937802 /* Headers */,
+				C576B265A93E25312929172E0AB5B460 /* Sources */,
+				27AE6978B7DEAB3C99D6DD07D4532395 /* Frameworks */,
+				39537AB4608D9B5FE694169E21AD9F19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toast-Swift";
+			productName = Toast_Swift;
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C3FD888620263C7390B65DDDD2C77E11 /* Pods-adOHRaUITests */ = {
@@ -306,7 +487,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -317,7 +498,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 770C6E2C46146FD1C05115A7A0D7D494 /* Products */;
+			productRefGroup = F802179AEF9034AC11120F9479956B46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -325,12 +506,28 @@
 				9F247826D741A1DA3DD0F5DE22456F99 /* Pods-adOHRa */,
 				27806632C84C5E81980E3CF37B46FD7E /* Pods-adOHRaTests */,
 				C3FD888620263C7390B65DDDD2C77E11 /* Pods-adOHRaUITests */,
+				B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */,
+				3F366479BDFA5B8FDA48D0F34F864DBB /* TPCircularBuffer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B868D13CF4877542CC6265A8324FF2B5 /* Resources */ = {
+		39537AB4608D9B5FE694169E21AD9F19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5094A757D846642A8B02BF7E3A4EC46F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73F733E07E21D402D48395CE6A1C7976 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,11 +545,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90A62F33A9C094FC117033B2E9B6EFD1 /* Sources */ = {
+		1E7EF842450E9ABC5038A23B52DD83C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2464D08F906C71768089E566D8E68B /* Pods-adOHRa-dummy.m in Sources */,
+				596E19543D221354EB9E5DB060A97532 /* Pods-adOHRa-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB0139011856D3EA1607B2ECE1F9A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88367AFC0AAFBC34EAC573FBA82E509F /* TPCircularBuffer.c in Sources */,
+				656813C9CD95030DB315F76E458E6613 /* TPCircularBuffer+AudioBufferList.c in Sources */,
+				7711E6C15EDB947A4B65D84CC5F4C99E /* TPCircularBuffer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C576B265A93E25312929172E0AB5B460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAE29563450C7ED7B9BEFD4F8C3788CA /* Toast.swift in Sources */,
+				6DFA70326D4C540DC43BD455F5A4A658 /* Toast-Swift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,11 +583,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D4DFA15648AE75380F381B0ACD37057B /* PBXTargetDependency */ = {
+		17C389A622F721FBD17E6FD658AC12E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPCircularBuffer;
+			target = 3F366479BDFA5B8FDA48D0F34F864DBB /* TPCircularBuffer */;
+			targetProxy = 1358BBFF7D739D05E9C51F6DFBA321DE /* PBXContainerItemProxy */;
+		};
+		2D9EB68C1AEA3FDE235820A8DED6191B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "opus-ios";
 			target = 2F473D873D73FE0E05032FA88922A5E0 /* opus-ios */;
-			targetProxy = 9FD2CF0029DFF661B80BB0AEC0C6D292 /* PBXContainerItemProxy */;
+			targetProxy = D98BF83E7EAD1F608E004D8847D31045 /* PBXContainerItemProxy */;
+		};
+		D42029A26DC5BAE724EA1A02C61EF837 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift";
+			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
+			targetProxy = 1DB6C64C074CE1CB9745906904F2EDDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -398,9 +626,78 @@
 			};
 			name = Release;
 		};
+		1F6D3DD34E8A819816BB3E88E22EDACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E1DAF95AFE7A440E5AE811B110E9652 /* Toast-Swift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		281669A0BA49F0CDE77AFB1E0B4856BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDA0BD9A4FD766DDD1839D161C122B11 /* TPCircularBuffer.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				PRODUCT_MODULE_NAME = TPCircularBuffer;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		69FB8A7357D96BE8CB80BA8A5AAF6D3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B2E7903EAE44D2B6B54D4574A8A1946 /* opus-ios.debug.xcconfig */;
+			baseConfigurationReference = 1146D35CEA59C6FC629ACD979DDAD4A0 /* opus-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -414,9 +711,31 @@
 			};
 			name = Debug;
 		};
-		732E35D483507D35F6D2154D35911ABB /* Release */ = {
+		787A8D4339FD4B187242B9D9C6E64342 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1A4DC22EE5FA23C5FEB519B1534F03B /* Pods-adOHRa.release.xcconfig */;
+			baseConfigurationReference = 7D8BF48EB40335BD3D17F36988E12C04 /* Pods-adOHRaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8125C31029289C6E3FDCC953409CAB9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D297F6EAD4327DCE825F68AECF1777D0 /* Pods-adOHRa.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -446,33 +765,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		787A8D4339FD4B187242B9D9C6E64342 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D8BF48EB40335BD3D17F36988E12C04 /* Pods-adOHRaTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
+			name = Debug;
 		};
 		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -557,6 +853,41 @@
 			};
 			name = Debug;
 		};
+		9EE7BA436F4E727169A18DB7E8986659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0977AD3D8531BF82C34E73265C7D3E43 /* TPCircularBuffer.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				PRODUCT_MODULE_NAME = TPCircularBuffer;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -623,47 +954,9 @@
 			};
 			name = Debug;
 		};
-		D7BFB7BFE54DAFB7CAE3F844CE22BBF8 /* Debug */ = {
+		CD57386ADCEA3B414CDE668A26D56A38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36816BDAFF3CDC8B8819CE61BE35D284 /* Pods-adOHRaTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DEF486B40C91678977E001A38304607D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 262A95B3AEBEC0E4AD5673DBE70EF589 /* opus-ios.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F18C9EA0A7069EC512228CD264CA6F7F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D297F6EAD4327DCE825F68AECF1777D0 /* Pods-adOHRa.debug.xcconfig */;
+			baseConfigurationReference = D1A4DC22EE5FA23C5FEB519B1534F03B /* Pods-adOHRa.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -693,14 +986,98 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Release;
+		};
+		D7BFB7BFE54DAFB7CAE3F844CE22BBF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36816BDAFF3CDC8B8819CE61BE35D284 /* Pods-adOHRaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
 			name = Debug;
+		};
+		DD076AFEEE0A686B597DD62BCA7E46CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D7B7FB760CADFF5EF0D0F20EB6B3CBC /* Toast-Swift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DEF486B40C91678977E001A38304607D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E199BCEBAE132367F8A23E67D8EA6624 /* opus-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3393B836BCDFD5292B077E63A26DC97F /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6D3DD34E8A819816BB3E88E22EDACC /* Debug */,
+				DD076AFEEE0A686B597DD62BCA7E46CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -728,20 +1105,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7C12EF67CCD9476E87E7EC27D826E836 /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				281669A0BA49F0CDE77AFB1E0B4856BF /* Debug */,
+				9EE7BA436F4E727169A18DB7E8986659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED1CE290BE67B90E2EEC9BD5FEBB13B /* Build configuration list for PBXNativeTarget "Pods-adOHRa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8125C31029289C6E3FDCC953409CAB9C /* Debug */,
+				CD57386ADCEA3B414CDE668A26D56A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B8A80EDD4F158976282344118CC2ED25 /* Build configuration list for PBXAggregateTarget "opus-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69FB8A7357D96BE8CB80BA8A5AAF6D3D /* Debug */,
 				DEF486B40C91678977E001A38304607D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E1A2E51EDF36401C43AB5139335589DE /* Build configuration list for PBXNativeTarget "Pods-adOHRa" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F18C9EA0A7069EC512228CD264CA6F7F /* Debug */,
-				732E35D483507D35F6D2154D35911ABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
