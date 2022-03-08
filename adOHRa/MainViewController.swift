@@ -135,7 +135,7 @@ class MainViewController: UIViewController, InterruptionDelegate {
                 print("The audio session was interrupted.")
                 
             case .wiredHeadphonesDisconnected:
-                print("Wired headphones were plugged out.")
+                print("Wired headphones were unplugged.")
                 view.makeToast(wiredHeadphonesDisconnected, duration: 5.0, position: .top)
                 
             case .bluetoothOutputDisconnected:
