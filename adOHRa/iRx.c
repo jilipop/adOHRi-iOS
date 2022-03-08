@@ -33,7 +33,7 @@ bool isInitialSilenceOver = false;
 RtpSession *session;
 OpusDecoder *decoder;
 TPCircularBuffer *buffer;
-JBParameters jbparams;
+//JBParameters jbparams;
 
 static void timestamp_jump(RtpSession *session, void *a, void *b, void *c) {
     printf("|\n");
@@ -44,14 +44,14 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
     
     RtpSession *session;
     
-    jbparams.enabled = TRUE;
+    /* jbparams.enabled = TRUE;
     jbparams.adaptive = TRUE;
     jbparams.buffer_algorithm = OrtpJitterBufferBasic;
     jbparams.nom_size = jitter;
     jbparams.min_size = jitter;
     jbparams.max_size = 200;
     jbparams.max_packets = 10;
-    jbparams.refresh_ms = 200;
+    jbparams.refresh_ms = 200; */
     
     session = rtp_session_new(RTP_SESSION_RECVONLY);
     rtp_session_set_scheduling_mode(session, TRUE);
