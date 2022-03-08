@@ -92,7 +92,9 @@ class MainViewController: UIViewController, InterruptionDelegate {
         if case .start = action {
             player.start()
             buttonTitle = stopTitle
+            wiFi.startPollingForConnection()
         } else {
+            wiFi.stopPollingForConnection()
             player.stop()
             buttonTitle = startTitle
         }

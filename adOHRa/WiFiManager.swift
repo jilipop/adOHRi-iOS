@@ -5,27 +5,16 @@ import SystemConfiguration.CaptiveNetwork
 class WiFiManager: InterruptionNotifier {
     private let wiFiCredentials: NEHotspotConfiguration
     private let config: NEHotspotConfigurationManager
-    private let reachability: Reachability
+    
+    private var timer: Timer?
     
     weak var delegate: InterruptionDelegate?
     
-    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false), reachability: Reachability = try! Reachability()) {
+    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false)) {
         self.config = hotspotConfigManager
         self.wiFiCredentials = hotspotConfig
-        self.reachability = reachability
         
         wiFiCredentials.lifeTimeInDays = 1
-
-        reachability.whenUnreachable = { _ in
-            if !self.isConnected() {
-                self.interruptionDidOccur(cause: .wiFiDisconnected)
-            }
-        }
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
-        }
     }
     
     func isConnected() -> Bool {
@@ -39,6 +28,19 @@ class WiFiManager: InterruptionNotifier {
             }
         }
         return ssid == wiFiCredentials.ssid ? true : false
+    }
+    
+    func startPollingForConnection() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+            if !self.isConnected() {
+                self.interruptionDidOccur(cause: .wiFiDisconnected)
+            }
+        })
+        timer?.tolerance = 0.5
+    }
+    
+    func stopPollingForConnection() {
+        timer?.invalidate()
     }
     
     func promptUserToConnect(callback: @escaping (Bool) -> Void) {

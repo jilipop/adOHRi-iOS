@@ -33,7 +33,6 @@
 		52C1D8DD2779EC550081C799 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C1D8DC2779EC550081C799 /* AVFAudio.framework */; };
 		52C1D8DF277A765F0081C799 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8DE277A765F0081C799 /* Player.swift */; };
 		52C1D8E3277A78C70081C799 /* iRx.c in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D8E2277A78C70081C799 /* iRx.c */; };
-		52E64EEA27A6FA4D0060273A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64EE927A6FA4D0060273A /* Reachability.swift */; };
 		52F1295027904093002DC967 /* WiFiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1294F27904093002DC967 /* WiFiManager.swift */; };
 		52F1295527904944002DC967 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295427904944002DC967 /* ExternalAccessory.framework */; };
 		52F12957279082BE002DC967 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F12956279082BE002DC967 /* NetworkExtension.framework */; };
@@ -110,7 +109,6 @@
 		52C1D8E0277A78C60081C799 /* adOHRa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "adOHRa-Bridging-Header.h"; sourceTree = "<group>"; };
 		52C1D8E2277A78C70081C799 /* iRx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = iRx.c; sourceTree = "<group>"; };
 		52C1D8E4277A7BE30081C799 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
-		52E64EE927A6FA4D0060273A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		52F1294F27904093002DC967 /* WiFiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiManager.swift; sourceTree = "<group>"; };
 		52F1295327904944002DC967 /* adOhRa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = adOhRa.entitlements; sourceTree = "<group>"; };
 		52F1295427904944002DC967 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -499,7 +497,6 @@
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
 				52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */,
 				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
-				52E64EEA27A6FA4D0060273A /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
