@@ -123,5 +123,6 @@ class Player {
             print("Failed to stop audio session. Error: \(error)")
         }
         TPCircularBufferCleanup(&circularBuffer)
+        availableBytes = 0
     }
 }
