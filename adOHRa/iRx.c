@@ -124,7 +124,6 @@ static void *run_rx() {
             printf("#\n");
         } else {
             packet = buf;
-            printf(".\n");
         }
         int numDecodedSamples = play_one_frame(packet, numBytesReceived);
         if (numDecodedSamples == -1)
