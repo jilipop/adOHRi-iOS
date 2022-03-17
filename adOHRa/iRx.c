@@ -94,8 +94,6 @@ static int play_one_frame(void *packet, opus_int32 len) {
     }
     
     uint32_t decodedBytes = numDecodedSamples * channels * sizeof(float);
-    printf("decoded samples: %d\n", numDecodedSamples);
-    printf("bytes decoded: %d\n", decodedBytes);
     
     if (isInitialSilenceOver == false && packet != NULL) {
         isInitialSilenceOver = true;
