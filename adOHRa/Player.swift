@@ -6,12 +6,13 @@ class Player {
     private let engine: AVAudioEngine
     private let playerNode: AVAudioPlayerNode
     private let outputFormat: AVAudioFormat
-    private let frameSize = UInt32(FRAME_SIZE)
+    private let frameSize = Int(FRAME_SIZE)
     private let numChannels = UInt32(CHANNELS)
     private let floatSize = UInt32(MemoryLayout<Float32>.stride)
     private let sampleRate = Double(RATE)
     private let bufferLength = UInt32(BUFFER_LENGTH)
     private let numSchedulers: Int = 2
+    private let bufferTargetMinSizeInFrames: Int = 2
     
     private var isPlayRequested = false
     private var circularBuffer = TPCircularBuffer()
@@ -80,7 +81,7 @@ class Player {
         let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: bufferLength)!
         if inputBufferTail != nil {
             let availableSamples = Int(availableBytes / floatSize)
-            if availableSamples < 1920 {
+            if availableSamples < frameSize * bufferTargetMinSizeInFrames {
                 print ("buffer running low")
             }
             let samplesToCopy = (availableSamples / numSchedulers) + (availableSamples / numSchedulers % Int(numChannels))
