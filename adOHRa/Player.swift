@@ -11,7 +11,7 @@ class Player {
     private let floatSize = UInt32(MemoryLayout<Float32>.stride)
     private let sampleRate = Double(RATE)
     private let bufferLength = UInt32(BUFFER_LENGTH)
-    private let numSchedulers: UInt32 = 2
+    private let numSchedulers: Int = 2
     
     private var isPlayRequested = false
     private var circularBuffer = TPCircularBuffer()
@@ -79,20 +79,23 @@ class Player {
         let inputBufferTail = TPCircularBufferTail(&circularBuffer, &availableBytes)
         let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: bufferLength)!
         if inputBufferTail != nil {
-            //TODO: This sometimes leads to odd samplecount numbers - fix it
-            let sampleCount = Int(availableBytes / floatSize / numSchedulers)
-            let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: sampleCount)
+            let sampleCount = Int(availableBytes / floatSize)
+            if sampleCount < 1920 {
+                print ("buffer running low")
+            }
+            let samplesToCopy = (sampleCount / numSchedulers) + (sampleCount / numSchedulers % 2)
+            let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: samplesToCopy)
             for channel in 0..<Int(numChannels) {
-                for sampleIndex in 0..<sampleCount {
+                for sampleIndex in 0..<samplesToCopy {
                     outputBuffer.floatChannelData![channel][sampleIndex] = tailFloatPointer[sampleIndex * Int(numChannels) + channel]
                 }
             }
-            outputBuffer.frameLength = AVAudioFrameCount(sampleCount / Int(numChannels))
+            outputBuffer.frameLength = AVAudioFrameCount(samplesToCopy / Int(numChannels))
             //let outputBufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
             //print(outputBufferListPointer[0])
             //print(outputBufferListPointer[1])
             print("bytes in circular buffer = \(availableBytes)")
-            //print("sample count = \(sampleCount)")
+            //print("samples copied = \(samplesToCopy)")
             print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
             //print("Circular buffer head = \(circularBuffer.head)")
             //print("Circular buffer tail before consume = \(circularBuffer.tail)")
