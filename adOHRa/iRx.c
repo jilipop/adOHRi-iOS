@@ -23,7 +23,8 @@ unsigned int rate = RATE,
             jitter = JITTER,
             channels = CHANNELS,
             port = PORT,
-referenceRate = PAYLOAD_0_REFERENCE_RATE;
+            framesize = FRAME_SIZE,
+            referenceRate = PAYLOAD_0_REFERENCE_RATE;
 const char *addr = ADDR;
 
 pthread_t thread_id;
@@ -80,7 +81,7 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
 static int play_one_frame(void *packet, opus_int32 len) {
     
     int numDecodedSamples;
-    unsigned int samples = 1920;
+    unsigned int samples = framesize * 2;
     
     float pcm[sizeof(float) * samples * channels];
     if (packet == NULL) {
