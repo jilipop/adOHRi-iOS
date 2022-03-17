@@ -79,11 +79,11 @@ class Player {
         let inputBufferTail = TPCircularBufferTail(&circularBuffer, &availableBytes)
         let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: bufferLength)!
         if inputBufferTail != nil {
-            let sampleCount = Int(availableBytes / floatSize)
-            if sampleCount < 1920 {
+            let availableSamples = Int(availableBytes / floatSize)
+            if availableSamples < 1920 {
                 print ("buffer running low")
             }
-            let samplesToCopy = (sampleCount / numSchedulers) + (sampleCount / numSchedulers % 2)
+            let samplesToCopy = (availableSamples / numSchedulers) + (availableSamples / numSchedulers % 2)
             let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: samplesToCopy)
             for channel in 0..<Int(numChannels) {
                 for sampleIndex in 0..<samplesToCopy {
