@@ -83,7 +83,7 @@ class Player {
             if availableSamples < 1920 {
                 print ("buffer running low")
             }
-            let samplesToCopy = (availableSamples / numSchedulers) + (availableSamples / numSchedulers % 2)
+            let samplesToCopy = (availableSamples / numSchedulers) + (availableSamples / numSchedulers % Int(numChannels))
             let tailFloatPointer = inputBufferTail!.bindMemory(to: Float.self, capacity: samplesToCopy)
             for channel in 0..<Int(numChannels) {
                 for sampleIndex in 0..<samplesToCopy {
@@ -94,9 +94,9 @@ class Player {
             //let outputBufferListPointer = UnsafeMutableAudioBufferListPointer(outputBuffer.mutableAudioBufferList)
             //print(outputBufferListPointer[0])
             //print(outputBufferListPointer[1])
-            print("bytes in circular buffer = \(availableBytes)")
+            //print("bytes in circular buffer = \(availableBytes)")
             //print("samples copied = \(samplesToCopy)")
-            print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
+            //print("outputBuffer.frameLength = \(outputBuffer.frameLength)")
             //print("Circular buffer head = \(circularBuffer.head)")
             //print("Circular buffer tail before consume = \(circularBuffer.tail)")
             TPCircularBufferConsume(&circularBuffer, outputBuffer.frameLength * numChannels * floatSize)
