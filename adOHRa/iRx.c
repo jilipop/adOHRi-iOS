@@ -161,7 +161,6 @@ void iRx_deinit() {
 
 void iRx_stop() {
     isPlayRequested = false;
-    isInitialSilenceOver = false;
     errno = 0;
     if (pthread_join(thread_id, NULL) != 0)
         printf("%s\n",strerror(errno));
