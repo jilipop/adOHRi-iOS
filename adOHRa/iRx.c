@@ -130,21 +130,17 @@ static void *run_rx(void *buffer) {
 static void iRx_init() {
     int error;
     
+    decoder = opus_decoder_create(rate, channels, &error);
     if (decoder == NULL) {
-        decoder = opus_decoder_create(rate, channels, &error);
-        if (decoder == NULL) {
-            printf("opus_decoder_create: %s\n",
-                opus_strerror(error));
-            return;
-        }
+        printf("opus_decoder_create: %s\n",
+            opus_strerror(error));
+        return;
     }
 
-    if (session == NULL) {
-        ortp_set_log_level("iRx", 1);
-        ortp_init();
-        ortp_scheduler_init();
-        session = create_rtp_recv(addr, port, jitter);
-    }
+    ortp_set_log_level("iRx", 1);
+    ortp_init();
+    ortp_scheduler_init();
+    session = create_rtp_recv(addr, port, jitter);
 }
 
 void iRx_start(TPCircularBuffer *circularBuffer) {
@@ -155,14 +151,12 @@ void iRx_start(TPCircularBuffer *circularBuffer) {
 }
 
 void iRx_deinit() {
-    if (session != NULL) {
-        rtp_session_destroy(session);
-        ortp_exit();
-    }
-    
-    if (decoder != NULL) {
-        opus_decoder_destroy(decoder);
-    }
+    rtp_session_destroy(session);
+    session = NULL;
+    //ortp_exit(); //can't start again after calling this. Bug in ortp? Caused by ortp_scheduler_init() failing on subsequent runs?
+
+    opus_decoder_destroy(decoder);
+    decoder = NULL;
 }
 
 void iRx_stop() {
