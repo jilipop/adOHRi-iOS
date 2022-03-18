@@ -19,14 +19,6 @@
 
 #include "iRx.h"
 
-unsigned int rate = RATE,
-            jitter = JITTER,
-            channels = CHANNELS,
-            port = PORT,
-            framesize = FRAME_SIZE,
-            referenceRate = PAYLOAD_0_REFERENCE_RATE;
-const char *addr = ADDR;
-
 pthread_t thread_id;
 bool isPlayRequested = false;
 bool isInitialSilenceOver = false;
@@ -159,7 +151,8 @@ void iRx_start(TPCircularBuffer *circularBuffer) {
     buffer = circularBuffer;
     iRx_init();
     isPlayRequested = true;
-    pthread_create(&thread_id, NULL, run_rx, NULL);
+    isInitialSilenceOver = false;
+    pthread_create(&thread_id, NULL, run_rx, circularBuffer);
 }
 
 void iRx_deinit() {
