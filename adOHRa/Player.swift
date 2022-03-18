@@ -41,6 +41,7 @@ class Player {
             iRx_stop()
         }
         iRx_deinit()
+        TPCircularBufferCleanup(&circularBuffer)
     }
     
     func isPlaying() -> Bool {
@@ -122,7 +123,7 @@ class Player {
         } catch {
             print("Failed to stop audio session. Error: \(error)")
         }
-        TPCircularBufferCleanup(&circularBuffer)
+        TPCircularBufferClear(&circularBuffer)
         availableBytes = 0
     }
 }
