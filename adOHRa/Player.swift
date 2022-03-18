@@ -36,7 +36,6 @@ class Player {
         engine.prepare()
     }
     
-    //TODO: Is this necessary? Seems to only be run when user kills app.
     deinit {
         if isPlayRequested {
             iRx_stop()
