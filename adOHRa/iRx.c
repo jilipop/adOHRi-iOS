@@ -89,6 +89,7 @@ static int play_one_frame(void *packet, void* buffer, opus_int32 len) {
     
     if (isInitialSilenceOver == false && packet != NULL) {
         isInitialSilenceOver = true;
+        printf("isInitialSilenceOver now true\n");
     }
     
     if (isInitialSilenceOver == true) {
