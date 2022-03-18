@@ -14,14 +14,15 @@ class Player {
     private let numSchedulers: Int = 2
     private let bufferTargetMinSizeInFrames: Int = 2
     
+    private var circularBuffer: TPCircularBuffer
     private var isPlayRequested = false
-    private var circularBuffer = TPCircularBuffer()
     private var availableBytes: UInt32 = 0
         
-    init(audioSession: AVAudioSession = .sharedInstance(), engine: AVAudioEngine = .init(), playerNode: AVAudioPlayerNode = .init()) {
+    init(audioSession: AVAudioSession = .sharedInstance(), engine: AVAudioEngine = .init(), playerNode: AVAudioPlayerNode = .init(), circularBuffer: TPCircularBuffer = .init()) {
         self.audioSession = audioSession
         self.engine = engine
         self.playerNode = playerNode
+        self.circularBuffer = circularBuffer
         do {
             try audioSession.setCategory(.playback, mode: .spokenAudio, policy: .longForm)
             print("audio session category set successfully")
