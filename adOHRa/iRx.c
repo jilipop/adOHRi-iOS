@@ -25,7 +25,6 @@ bool isInitialSilenceOver = false;
 
 RtpSession *session;
 OpusDecoder *decoder;
-TPCircularBuffer *buffer;
 //JBParameters jbparams;
 
 static void timestamp_jump(RtpSession *session, void *a, void *b, void *c) {
@@ -70,7 +69,7 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
     return session;
 }
 
-static int play_one_frame(void *packet, opus_int32 len) {
+static int play_one_frame(void *packet, void* buffer, opus_int32 len) {
     
     int numDecodedSamples;
     unsigned int samples = framesize * 2;
@@ -101,7 +100,7 @@ static int play_one_frame(void *packet, opus_int32 len) {
     return numDecodedSamples;
 }
 
-static void *run_rx() {
+static void *run_rx(void *buffer) {
     int timestamp = 0;
     
     while (isPlayRequested == true) {
@@ -118,7 +117,7 @@ static void *run_rx() {
         } else {
             packet = buf;
         }
-        int numDecodedSamples = play_one_frame(packet, numBytesReceived);
+        int numDecodedSamples = play_one_frame(packet, buffer, numBytesReceived);
         if (numDecodedSamples == -1)
             printf("Error: numDecodedSamples is -1.\n");
 
@@ -148,7 +147,6 @@ static void iRx_init() {
 }
 
 void iRx_start(TPCircularBuffer *circularBuffer) {
-    buffer = circularBuffer;
     iRx_init();
     isPlayRequested = true;
     isInitialSilenceOver = false;
