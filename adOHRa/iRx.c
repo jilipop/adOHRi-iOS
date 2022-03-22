@@ -136,8 +136,6 @@ static void iRx_init() {
             opus_strerror(error));
         return;
     }
-
-    ortp_set_log_level("iRx", 1);
     ortp_init();
     ortp_scheduler_init();
     session = create_rtp_recv(addr, port, jitter);
@@ -159,11 +157,25 @@ void iRx_deinit() {
     decoder = NULL;
 }
 
+static void log_stats() {
+    printf("\n");
+    printf("global rtp stats:\n");
+    printf("received                             %llu packets\n", ortp_global_stats.packet_recv);
+    printf("                                     %llu duplicated packets\n", ortp_global_stats.packet_dup_recv);
+    printf("                                     %llu bytes\n", ortp_global_stats.hw_recv);
+    printf("incoming delivered to the app        %llu bytes\n", ortp_global_stats.recv);
+    printf("incoming cumulative lost             %llu packets\n", ortp_global_stats.cum_packet_loss);
+    printf("incoming received too late           %llu packets\n", ortp_global_stats.outoftime);
+    printf("incoming bad formatted               %llu packets\n", ortp_global_stats.bad);
+    printf("incoming discarded (queue overflow)  %llu packets\n", ortp_global_stats.discarded);
+}
+
 void iRx_stop() {
     isPlayRequested = false;
     errno = 0;
     if (pthread_join(thread_id, NULL) != 0) {
         printf("%s\n",strerror(errno));
     }
+    log_stats();
     iRx_deinit();
 }
