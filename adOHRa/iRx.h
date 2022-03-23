@@ -14,18 +14,15 @@
 #include <pthread.h>
 
 #include "constants.h"
-#include "TPCircularBuffer.h"
 
 unsigned int rate = RATE,
             jitter = JITTER,
             channels = CHANNELS,
             port = PORT,
-            framesize = FRAME_SIZE,
             referenceRate = PAYLOAD_0_REFERENCE_RATE;
 const char *addr = ADDR;
 
-void iRx_start(TPCircularBuffer *buffer);
-void iRx_stop(void);
-void iRx_deinit(void);
+RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsigned int jitter);
+void log_stats(void);
 
 #endif /* iRx_h */
