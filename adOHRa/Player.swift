@@ -94,13 +94,13 @@ class Player {
     
     private func runRx() {
         var timestamp: UInt32 = 0
+        let bufsize = 32768
+        var numBytesReceived: CInt
+        var have_more: CInt = 0
+        var packet: UnsafeMutablePointer<CChar>?
         
         while isPlayRequested {
-            let bufsize = 32768
             let buf = UnsafeMutablePointer<CChar>.allocate(capacity: bufsize)
-            var numBytesReceived: CInt
-            var have_more: CInt = 0
-            var packet: UnsafeMutablePointer<CChar>?
 
             numBytesReceived = rtp_session_recv_with_ts(session, buf,
                                                         CInt(bufsize), timestamp, &have_more)
