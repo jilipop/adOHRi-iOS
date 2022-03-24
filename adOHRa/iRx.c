@@ -28,7 +28,7 @@ static void timestamp_jump(RtpSession *session, void *a, void *b, void *c) {
     rtp_session_resync(session);
 }
 
-RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsigned int jitter) {
+static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsigned int jitter) {
     
     RtpSession *session;
     
@@ -65,7 +65,57 @@ RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsigned int 
     return session;
 }
 
-void log_stats() {
+static int play_one_frame(void *packet, opus_int32 len, AudioBufferList *bufferlist) {
+    int numDecodedSamples;
+    unsigned int samples = framesize * 2;
+    
+    float pcm[sizeof(float) * samples * channels];
+    if (packet == NULL) {
+        numDecodedSamples = opus_decode_float(decoder, NULL, 0, pcm, samples, 1);
+    } else {
+        numDecodedSamples = opus_decode_float(decoder, packet, len, pcm, samples, 0);
+    }
+    if (numDecodedSamples < 0) {
+        printf("opus_decode: %s\n", opus_strerror(numDecodedSamples));
+        return -1;
+    }
+    
+    const float* sourceFloat = (const float*)pcm;
+    for (int channel = 0; channel < channels; channel++) {
+        for (int sampleIndex = 0; sampleIndex < samples; sampleIndex++) {
+            float* destinationFloat = (float*)bufferlist->mBuffers[channel].mData;
+            destinationFloat[sampleIndex] = sourceFloat[sampleIndex * channels + channel];
+            
+            //memcpy(&bufferlist->mBuffers[channel].mData[sampleIndex], &pcm[sampleIndex * channels + channel], sizeof(float));
+            //*(float*)&bufferlist->mBuffers[channel].mData[sampleIndex] = *(float*)&pcm[sampleIndex * channels + channel];
+        }
+    }
+    return numDecodedSamples;
+}
+
+int rx(AudioBufferList *bufferlist) {
+    static int timestamp;
+    int numBytesReceived, have_more;
+    char buf[32768];
+    void *packet;
+    
+    numBytesReceived = rtp_session_recv_with_ts(session, (uint8_t*)buf,
+            sizeof(buf), timestamp, &have_more);
+
+    if (numBytesReceived == 0) {
+        packet = NULL;
+        printf("#\n");
+    } else {
+        packet = buf;
+        printf(".\n");
+    }
+    int numDecodedSamples = play_one_frame(packet, numBytesReceived, bufferlist);
+    
+    timestamp += numDecodedSamples * referenceRate / rate;
+    return numDecodedSamples;
+}
+
+static void log_stats() {
     printf("\n");
     printf("global rtp stats:\n");
     printf("received                             %llu packets\n", ortp_global_stats.packet_recv);
@@ -76,4 +126,29 @@ void log_stats() {
     printf("incoming received too late           %llu packets\n", ortp_global_stats.outoftime);
     printf("incoming bad formatted               %llu packets\n", ortp_global_stats.bad);
     printf("incoming discarded (queue overflow)  %llu packets\n", ortp_global_stats.discarded);
+}
+
+void iRx_start() {
+    int error;
+    
+    decoder = opus_decoder_create(rate, channels, &error);
+    if (decoder == NULL) {
+        printf("opus_decoder_create: %s\n",
+            opus_strerror(error));
+        return;
+    }
+    
+    ortp_init();
+    ortp_scheduler_init();
+    session = create_rtp_recv(addr, port, jitter);
+}
+
+void iRx_stop() {
+    log_stats();
+    rtp_session_destroy(session);
+    session = NULL;
+    //ortp_exit(); //can't start again after calling this. Bug in ortp? Caused by ortp_scheduler_init() failing on subsequent runs?
+
+    opus_decoder_destroy(decoder);
+    decoder = NULL;
 }
