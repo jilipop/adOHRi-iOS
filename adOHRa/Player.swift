@@ -74,9 +74,7 @@ class Player {
         while isPlayRequested {
             let outputBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: sampleCount)!
             let result = rx(&outputBuffer.mutableAudioBufferList.pointee)
-            print(outputBuffer.floatChannelData![0][85])
-            print(outputBuffer.floatChannelData![0][900])
-            print(outputBuffer.floatChannelData![1][470])
+            outputBuffer.frameLength = AVAudioFrameCount(frameSize)
             if result < 0 {
                 print("stopping due to decoding error")
                 stop() //TODO: probably should do this through an interruption delegate
