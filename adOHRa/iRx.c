@@ -65,7 +65,7 @@ static RtpSession* create_rtp_recv(const char *addr_desc, const int port, unsign
     return session;
 }
 
-static int play_one_frame(void *packet, opus_int32 len, AudioBufferList *bufferlist) {
+static int process_packet(void *packet, opus_int32 len, AudioBufferList *bufferlist) {
     int numDecodedSamples;
     unsigned int samples = framesize * 2;
     
@@ -85,9 +85,6 @@ static int play_one_frame(void *packet, opus_int32 len, AudioBufferList *bufferl
         for (int sampleIndex = 0; sampleIndex < samples; sampleIndex++) {
             float* destinationFloat = (float*)bufferlist->mBuffers[channel].mData;
             destinationFloat[sampleIndex] = sourceFloat[sampleIndex * channels + channel];
-            
-            //memcpy(&bufferlist->mBuffers[channel].mData[sampleIndex], &pcm[sampleIndex * channels + channel], sizeof(float));
-            //*(float*)&bufferlist->mBuffers[channel].mData[sampleIndex] = *(float*)&pcm[sampleIndex * channels + channel];
         }
     }
     return numDecodedSamples;
@@ -107,9 +104,8 @@ int rx(AudioBufferList *bufferlist) {
         printf("#\n");
     } else {
         packet = buf;
-        printf(".\n");
     }
-    int numDecodedSamples = play_one_frame(packet, numBytesReceived, bufferlist);
+    int numDecodedSamples = process_packet(packet, numBytesReceived, bufferlist);
     
     timestamp += numDecodedSamples * referenceRate / rate;
     return numDecodedSamples;
@@ -148,7 +144,6 @@ void iRx_stop() {
     rtp_session_destroy(session);
     session = NULL;
     //ortp_exit(); //can't start again after calling this. Bug in ortp? Caused by ortp_scheduler_init() failing on subsequent runs?
-
     opus_decoder_destroy(decoder);
     decoder = NULL;
 }
