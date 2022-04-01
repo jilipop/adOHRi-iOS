@@ -114,14 +114,14 @@ int rx(AudioBufferList *bufferlist) {
 static void log_stats() {
     printf("\n");
     printf("global rtp stats:\n");
-    printf("received                             %llu packets\n", ortp_global_stats.packet_recv);
-    printf("                                     %llu duplicated packets\n", ortp_global_stats.packet_dup_recv);
-    printf("                                     %llu bytes\n", ortp_global_stats.hw_recv);
-    printf("incoming delivered to the app        %llu bytes\n", ortp_global_stats.recv);
-    printf("incoming cumulative lost             %llu packets\n", ortp_global_stats.cum_packet_loss);
-    printf("incoming received too late           %llu packets\n", ortp_global_stats.outoftime);
-    printf("incoming bad formatted               %llu packets\n", ortp_global_stats.bad);
-    printf("incoming discarded (queue overflow)  %llu packets\n", ortp_global_stats.discarded);
+    printf("received                             %llu packets\n", session->stats.packet_recv);
+    printf("                                     %llu duplicated packets\n", session->stats.packet_dup_recv);
+    printf("                                     %llu bytes\n", session->stats.hw_recv);
+    printf("incoming delivered to the app        %llu bytes\n", session->stats.recv);
+    printf("incoming cumulative lost             %llu packets\n", session->stats.cum_packet_loss);
+    printf("incoming received too late           %llu packets\n", session->stats.outoftime);
+    printf("incoming bad formatted               %llu packets\n", session->stats.bad);
+    printf("incoming discarded (queue overflow)  %llu packets\n", session->stats.discarded);
 }
 
 void iRx_start() {
