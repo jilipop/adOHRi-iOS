@@ -113,7 +113,7 @@ int rx(AudioBufferList *bufferlist) {
 
 static void log_stats() {
     printf("\n");
-    printf("global rtp stats:\n");
+    printf("session rtp stats:\n");
     printf("received                             %llu packets\n", session->stats.packet_recv);
     printf("                                     %llu duplicated packets\n", session->stats.packet_dup_recv);
     printf("                                     %llu bytes\n", session->stats.hw_recv);
