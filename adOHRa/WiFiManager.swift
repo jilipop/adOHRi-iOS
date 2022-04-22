@@ -10,7 +10,7 @@ class WiFiManager: InterruptionNotifier {
     
     weak var delegate: InterruptionDelegate?
     
-    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid/*, passphrase: Secrets.passphrase, isWEP: false*/)) {
+    init(hotspotConfigManager: NEHotspotConfigurationManager = .init(), hotspotConfig: NEHotspotConfiguration = .init(ssid: Secrets.ssid, passphrase: Secrets.passphrase, isWEP: false)) {
         self.config = hotspotConfigManager
         self.wiFiCredentials = hotspotConfig
         
