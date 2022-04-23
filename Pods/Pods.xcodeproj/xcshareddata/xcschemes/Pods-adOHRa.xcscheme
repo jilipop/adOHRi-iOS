@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F247826D741A1DA3DD0F5DE22456F99"
-               BuildableName = "Pods_adOHRa.framework"
-               BlueprintName = "Pods-adOHRa"
+               BlueprintIdentifier = "FCFA9A30A7A716CAF7298C73C8B91A50"
+               BuildableName = "Pods_adOHRi.framework"
+               BlueprintName = "Pods-adOHRi"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F247826D741A1DA3DD0F5DE22456F99"
-            BuildableName = "Pods_adOHRa.framework"
-            BlueprintName = "Pods-adOHRa"
+            BlueprintIdentifier = "FCFA9A30A7A716CAF7298C73C8B91A50"
+            BuildableName = "Pods_adOHRi.framework"
+            BlueprintName = "Pods-adOHRi"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

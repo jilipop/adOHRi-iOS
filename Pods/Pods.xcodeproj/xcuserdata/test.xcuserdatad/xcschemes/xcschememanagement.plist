@@ -4,17 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-adOHRa.xcscheme</key>
+		<key>LicensesKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-adOHRaTests.xcscheme</key>
+		<key>Pods-adOHRi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-adOHRaUITests.xcscheme</key>
+		<key>Pods-adOHRiTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-adOHRiUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>StringBuilder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

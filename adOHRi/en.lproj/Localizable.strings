@@ -1,0 +1,14 @@
+"MainViewController.StartStopButton.Start" = "Start";
+"MainViewController.StartStopButton.Stop" = "Stop";
+
+"MainViewController.UseHeadphonesToast" = "Please use headphones";
+"MainViewController.WiredHeadphonesDisconnectedToast" = "Wired headphones disconnected";
+"MainViewController.BluetoothHeadphonesDisconnectedToast" = "Connection to bluetooth headphones lost";
+"MainViewController.WiFiDisconnectedToast" = "WiFi connection lost";
+
+"InfoViewController.AuthorLabel" = "Project lead: Agnes Nuber Author: Hubert Popiolek commissioned by AG Kurzfilm";
+
+"InfoViewController.LicencesButtonText" = "Licences";
+"InfoViewController.SourceCodeButtonText" = "Source code";
+"LicensesViewController.HeaderText" = "<h2>Third party code used in adOHRi</h2>";
+"LicensesViewController.Title" = "Licenses";

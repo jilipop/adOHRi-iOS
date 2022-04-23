@@ -1,0 +1,46 @@
+{
+    "notices": [
+        {
+            "name": "BcToolbox",
+            "url": "https://github.com/BelledonneCommunications/bctoolbox",
+            "copyright": "Copyright (C) Belledonne Communications",
+            "license": "GNU General Public License 3.0"
+        },
+        {
+            "name": "LicensesKit",
+            "url": "https://github.com/mattwyskiel/LicensesKit",
+            "copyright": "Copyright (C) 2014 Matthew Wyskiel",
+            "license": "Apache Software License 2.0"
+        },
+        {
+            "name": "Opus Interactive Audio Codec",
+            "url": "https://opus-codec.org/",
+            "copyright": "Copyright (C) 2001-2011 Xiph.Org, Skype Limited, Octasic, Jean-Marc Valin, Timothy B. Terriberry, CSIRO, Gregory Maxwell, Mark Borgerding, Erik de Castro Lopo",
+            "license": "BSD 3-Clause License"
+        },
+        {
+            "name": "opus-ios",
+            "url": "https://github.com/chrisballinger/Opus-iOS",
+            "copyright": "Copyright (C) 2014 Chris Ballinger",
+            "license": "MIT License"
+        },
+        {
+            "name": "oRTP",
+            "url": "https://github.com/BelledonneCommunications/ortp",
+            "copyright": "Copyright (C) Belledonne Communications",
+            "license": "GNU General Public License 3.0"
+        },
+        {
+            "name": "Toast-Swift",
+            "url": "https://github.com/scalessec/Toast-Swift",
+            "copyright": "Copyright (C) 2015-2017 Charles Scalesse",
+            "license": "MIT License"
+        },
+        {
+            "name": "trx",
+            "url": "http://www.pogo.org.uk/~mark/trx/",
+            "copyright": "Copyright (C) 2019 Mark Hills",
+            "license": "GNU General Public License 2.0"
+        }
+    ]
+}
