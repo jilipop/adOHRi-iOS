@@ -31,6 +31,12 @@
             "license": "GNU General Public License 3.0"
         },
         {
+            "name": "StringBuilder",
+            "url": "https://github.com/mattwyskiel/StringBuilder",
+            "copyright": "Copyright (C) 2015 Matthew Wyskiel",
+            "license": "Apache Software License 2.0"
+        },
+        {
             "name": "Toast-Swift",
             "url": "https://github.com/scalessec/Toast-Swift",
             "copyright": "Copyright (C) 2015-2017 Charles Scalesse",
