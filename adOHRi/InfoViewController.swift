@@ -17,7 +17,9 @@ class InfoViewController: UIViewController {
     let sourceCodeButtonText = NSLocalizedString("InfoViewController.SourceCodeButtonText", comment: "Text des Quellcode-Buttons")
     
     let licensesVC = LicensesViewController()
-
+//TODO: style the licenses screen
+    let licensesCss = ""
+    
     @IBOutlet weak var appNameAndVersion: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var licencesButton: UIButton!
@@ -32,6 +34,7 @@ class InfoViewController: UIViewController {
         licensesVC.pageHeader = NSLocalizedString("LicensesViewController.HeaderText", comment: "HTML-formatierte Überschrift der Lizenzliste")
         licensesVC.navigationTitle = NSLocalizedString("LicensesViewController.Title", comment: "Titel der Lizenzliste – ganz oben in der Navigationsleiste")
         self.navigationController!.pushViewController(licensesVC, animated: true)
+        licensesVC.cssStyle = licensesCss
     }
     
     override func viewDidLoad() {
