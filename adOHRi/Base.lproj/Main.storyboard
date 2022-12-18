@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl3-gf-ex4">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="368.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="378.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.icon" translatesAutoresizingMaskIntoConstraints="NO" id="zqk-PY-MAx">
                                                 <rect key="frame" x="-15.5" y="20" width="351" height="118"/>
@@ -98,7 +98,7 @@ im Auftrag der AG Kurzfilm</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp" userLabel="Licences Button">
-                                                <rect key="frame" x="129.5" y="292.5" width="61" height="30"/>
+                                                <rect key="frame" x="129.5" y="302.5" width="61" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="c8v-uf-XZg"/>
                                                 </constraints>
@@ -111,7 +111,7 @@ im Auftrag der AG Kurzfilm</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X10-yB-fYA" userLabel="Source Code Button">
-                                                <rect key="frame" x="125" y="330.5" width="70" height="30"/>
+                                                <rect key="frame" x="125" y="340.5" width="70" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="X42-uB-XiE"/>
                                                 </constraints>
@@ -131,7 +131,7 @@ im Auftrag der AG Kurzfilm</string>
                                             <constraint firstItem="X10-yB-fYA" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="LqB-l8-sQV"/>
                                             <constraint firstItem="bRb-Vq-evp" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="Mjg-Ea-vLz"/>
                                             <constraint firstItem="zqk-PY-MAx" firstAttribute="top" secondItem="Hl3-gf-ex4" secondAttribute="top" constant="20" id="PZ9-8F-KdE"/>
-                                            <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="8" id="ThH-43-qtz"/>
+                                            <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="18" id="ThH-43-qtz"/>
                                             <constraint firstItem="X10-yB-fYA" firstAttribute="bottom" secondItem="Hl3-gf-ex4" secondAttribute="bottom" constant="-8" id="a3u-xn-ezV"/>
                                             <constraint firstItem="qr1-xH-VsR" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="hT6-TD-N6y"/>
                                             <constraint firstItem="X10-yB-fYA" firstAttribute="top" secondItem="bRb-Vq-evp" secondAttribute="bottom" constant="8" id="kIn-el-53a"/>
@@ -184,7 +184,7 @@ im Auftrag der AG Kurzfilm</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ts-wf-lOS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPZ-uG-z1k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
