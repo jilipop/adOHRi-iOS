@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Ts-wf-lOS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Ts-wf-lOS">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +35,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eXK-8v-F0x"/>
                             <constraint firstItem="RYQ-vr-Sig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7p-Ov-0LI"/>
@@ -64,76 +64,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp" userLabel="Licences Button">
-                                <rect key="frame" x="129.5" y="415" width="61" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="i8q-Kb-pMP"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Lizenzen"/>
-                                <connections>
-                                    <action selector="didTapLicensesButtonWithSender:" destination="63v-Lc-KPv" eventType="touchUpInside" id="ygu-UU-pae"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adOHRi 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMy-3M-mPA">
-                                <rect key="frame" x="97" y="291" width="126" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.icon" translatesAutoresizingMaskIntoConstraints="NO" id="zqk-PY-MAx">
-                                <rect key="frame" x="-15.5" y="165" width="351" height="118"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="Phn-lo-pS1"/>
-                                    <constraint firstAttribute="width" constant="351" id="ZgM-Ah-ymI"/>
-                                </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-xH-VsR" userLabel="Credits Label">
-                                <rect key="frame" x="53.5" y="330" width="213" height="61"/>
-                                <string key="text">Projektleitung: Agnes Nuber Autor: Hubert Popiolek
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dta-pw-6SD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl3-gf-ex4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="368.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.icon" translatesAutoresizingMaskIntoConstraints="NO" id="zqk-PY-MAx">
+                                                <rect key="frame" x="-15.5" y="20" width="351" height="118"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adOHRi x.y.z" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMy-3M-mPA">
+                                                <rect key="frame" x="112.5" y="146" width="95" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="95S-Hh-gtK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InfoText" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfA-Hy-3ud">
+                                                <rect key="frame" x="10" y="185" width="300" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-xH-VsR" userLabel="Credits Label">
+                                                <rect key="frame" x="53.5" y="223.5" width="213" height="61"/>
+                                                <string key="text">Projektleitung: Agnes Nuber Autor: Hubert Popiolek
 im Auftrag der AG Kurzfilm</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X10-yB-fYA" userLabel="Source Code Button">
-                                <rect key="frame" x="125" y="455" width="70" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Quellcode"/>
-                                <connections>
-                                    <action selector="didTapSourceCodeButtonWithSender:" destination="63v-Lc-KPv" eventType="touchUpInside" id="lyf-n8-kah"/>
-                                </connections>
-                            </button>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-Vq-evp" userLabel="Licences Button">
+                                                <rect key="frame" x="129.5" y="292.5" width="61" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="c8v-uf-XZg"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Lizenzen">
+                                                    <color key="titleColor" red="0.11764705882352941" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapLicensesButtonWithSender:" destination="63v-Lc-KPv" eventType="touchUpInside" id="ygu-UU-pae"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X10-yB-fYA" userLabel="Source Code Button">
+                                                <rect key="frame" x="125" y="330.5" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="X42-uB-XiE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Quellcode">
+                                                    <color key="titleColor" red="0.1176470588" green="0.56470588239999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapSourceCodeButtonWithSender:" destination="63v-Lc-KPv" eventType="touchUpInside" id="lyf-n8-kah"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zqk-PY-MAx" firstAttribute="centerX" secondItem="X10-yB-fYA" secondAttribute="centerX" id="DcR-fL-5Ow"/>
+                                            <constraint firstItem="X10-yB-fYA" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="LqB-l8-sQV"/>
+                                            <constraint firstItem="bRb-Vq-evp" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="Mjg-Ea-vLz"/>
+                                            <constraint firstItem="zqk-PY-MAx" firstAttribute="top" secondItem="Hl3-gf-ex4" secondAttribute="top" constant="20" id="PZ9-8F-KdE"/>
+                                            <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="8" id="ThH-43-qtz"/>
+                                            <constraint firstItem="X10-yB-fYA" firstAttribute="bottom" secondItem="Hl3-gf-ex4" secondAttribute="bottom" constant="-8" id="a3u-xn-ezV"/>
+                                            <constraint firstItem="qr1-xH-VsR" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="hT6-TD-N6y"/>
+                                            <constraint firstItem="X10-yB-fYA" firstAttribute="top" secondItem="bRb-Vq-evp" secondAttribute="bottom" constant="8" id="kIn-el-53a"/>
+                                            <constraint firstItem="nMy-3M-mPA" firstAttribute="top" secondItem="zqk-PY-MAx" secondAttribute="bottom" constant="8" id="kU5-PF-HQb"/>
+                                            <constraint firstItem="NfA-Hy-3ud" firstAttribute="trailing" secondItem="Hl3-gf-ex4" secondAttribute="trailing" constant="-10" id="mbN-aH-eg1"/>
+                                            <constraint firstItem="qr1-xH-VsR" firstAttribute="top" secondItem="NfA-Hy-3ud" secondAttribute="bottom" constant="18" id="oIt-yf-cIU"/>
+                                            <constraint firstItem="nMy-3M-mPA" firstAttribute="centerX" secondItem="Hl3-gf-ex4" secondAttribute="centerX" id="pbr-Yn-IAF"/>
+                                            <constraint firstItem="NfA-Hy-3ud" firstAttribute="leading" secondItem="Hl3-gf-ex4" secondAttribute="leading" constant="10" id="sfv-ux-qzl"/>
+                                            <constraint firstItem="NfA-Hy-3ud" firstAttribute="top" secondItem="nMy-3M-mPA" secondAttribute="bottom" constant="18" id="v5i-2p-lMW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="dbx-ST-iOr"/>
+                                <constraints>
+                                    <constraint firstItem="Hl3-gf-ex4" firstAttribute="trailing" secondItem="mEe-Iu-XsF" secondAttribute="trailing" id="AXu-nK-tE3"/>
+                                    <constraint firstItem="Hl3-gf-ex4" firstAttribute="leading" secondItem="mEe-Iu-XsF" secondAttribute="leading" id="S3N-Y9-rDI"/>
+                                    <constraint firstItem="740-J0-Dxd" firstAttribute="width" secondItem="Hl3-gf-ex4" secondAttribute="width" id="W20-9v-Axz"/>
+                                    <constraint firstItem="Hl3-gf-ex4" firstAttribute="bottom" secondItem="mEe-Iu-XsF" secondAttribute="bottom" id="XtE-Wk-k1S"/>
+                                    <constraint firstItem="Hl3-gf-ex4" firstAttribute="top" secondItem="mEe-Iu-XsF" secondAttribute="top" id="hDf-f5-L9X"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="mEe-Iu-XsF"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="740-J0-Dxd"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wGg-tH-DlK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bRb-Vq-evp" firstAttribute="top" secondItem="qr1-xH-VsR" secondAttribute="bottom" constant="24" id="9VY-ZC-qI4"/>
-                            <constraint firstItem="bRb-Vq-evp" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="Bd8-Rs-0pH"/>
-                            <constraint firstItem="X10-yB-fYA" firstAttribute="top" secondItem="bRb-Vq-evp" secondAttribute="bottom" constant="8" id="CKZ-sU-EnE"/>
-                            <constraint firstItem="zqk-PY-MAx" firstAttribute="centerY" secondItem="9NM-g2-Gr5" secondAttribute="centerY" constant="-60" id="SVb-Be-eo7"/>
-                            <constraint firstItem="nMy-3M-mPA" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="WRE-YN-Rpm"/>
-                            <constraint firstItem="nMy-3M-mPA" firstAttribute="leading" secondItem="wGg-tH-DlK" secondAttribute="leading" constant="97" id="X8T-NH-XyJ"/>
-                            <constraint firstItem="X10-yB-fYA" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="cY9-80-A0l"/>
-                            <constraint firstItem="qr1-xH-VsR" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="fFI-cD-bku"/>
-                            <constraint firstItem="zqk-PY-MAx" firstAttribute="centerX" secondItem="9NM-g2-Gr5" secondAttribute="centerX" id="h8G-6B-3P9"/>
-                            <constraint firstItem="nMy-3M-mPA" firstAttribute="top" secondItem="zqk-PY-MAx" secondAttribute="bottom" constant="8" id="rh6-fD-wrF"/>
-                            <constraint firstItem="qr1-xH-VsR" firstAttribute="top" secondItem="nMy-3M-mPA" secondAttribute="bottom" constant="18" id="sNM-Rv-uNE"/>
+                            <constraint firstItem="dta-pw-6SD" firstAttribute="leading" secondItem="wGg-tH-DlK" secondAttribute="leading" id="9Tg-cu-JOV"/>
+                            <constraint firstItem="dta-pw-6SD" firstAttribute="top" secondItem="9NM-g2-Gr5" secondAttribute="top" id="Ed1-TP-VXT"/>
+                            <constraint firstItem="wGg-tH-DlK" firstAttribute="bottom" secondItem="dta-pw-6SD" secondAttribute="bottom" id="Vc4-or-47I"/>
+                            <constraint firstItem="dta-pw-6SD" firstAttribute="trailing" secondItem="wGg-tH-DlK" secondAttribute="trailing" id="cCd-Cl-Gv3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qHX-hP-PJq"/>
                     <connections>
                         <outlet property="appNameAndVersion" destination="nMy-3M-mPA" id="jXs-Da-qmz"/>
                         <outlet property="authorLabel" destination="qr1-xH-VsR" id="yUa-kx-dtz"/>
+                        <outlet property="infoLabel" destination="NfA-Hy-3ud" id="4he-VF-Vop"/>
                         <outlet property="licencesButton" destination="bRb-Vq-evp" id="0Ii-Dg-Gpr"/>
                         <outlet property="sourceCodeButton" destination="X10-yB-fYA" id="4PA-Mj-AUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpL-JO-R8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746.376811594203" y="82.366071428571431"/>
+            <point key="canvasLocation" x="1744.9275362318842" y="80.706521739130437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LZB-1A-i4P">
@@ -141,8 +184,11 @@ im Auftrag der AG Kurzfilm</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ts-wf-lOS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPZ-uG-z1k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -155,7 +201,7 @@ im Auftrag der AG Kurzfilm</string>
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="info.icon" width="351" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

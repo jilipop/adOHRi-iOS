@@ -13,15 +13,16 @@ extension Bundle {
 class InfoViewController: UIViewController {
     
     let authorText = NSLocalizedString("InfoViewController.AuthorLabel", comment: "Nennung des App-Entwicklers und des Auftraggebers")
+    let infoText = NSLocalizedString("InfoViewController.InfoLabel", comment: "Erklärtext zur App")
     let licencesButtonText = NSLocalizedString("InfoViewController.LicencesButtonText", comment: "Text des Lizenzen-Buttons")
     let sourceCodeButtonText = NSLocalizedString("InfoViewController.SourceCodeButtonText", comment: "Text des Quellcode-Buttons")
     
     let licensesVC = LicensesViewController()
-//TODO: style the licenses screen
-    let licensesCss = ""
+    let licensesCss = "body {\nbackground-color: #000;\ncolor: #fff;\nfont-family: sans-serif;\noverflow-wrap:\nbreak-word;\n}\npre {\nbackground-color: #181818;\npadding: 1em;\nwhite-space: pre-wrap;\n}\na {\ncolor: #1E90FF;\n}\np.license {\nbackground:grey;\n}"
     
     @IBOutlet weak var appNameAndVersion: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var licencesButton: UIButton!
     @IBOutlet weak var sourceCodeButton: UIButton!
     
@@ -47,6 +48,7 @@ class InfoViewController: UIViewController {
             appNameAndVersion.text?.append(version)
         }
         authorLabel.text = authorText
+        infoLabel.text = infoText
         licencesButton.setTitle(licencesButtonText, for: .normal)
         sourceCodeButton.setTitle(sourceCodeButtonText, for: .normal)
     }
