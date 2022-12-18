@@ -39,12 +39,9 @@ class MainViewController: UIViewController, InterruptionDelegate {
         startStopButton.setTitle(startTitle, for: .normal)
         toastStyle.backgroundColor = .systemBlue
         toastStyle.activityBackgroundColor = .clear
-        toastStyle.activityIndicatorColor = .black
+        toastStyle.activityIndicatorColor = .white
 
         if #available(iOS 13.0, *) {
-            toastStyle.activityIndicatorColor = UIColor.init { (traitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .dark ? .white : .black
-            }
             toastStyle.messageColor = UIColor.init { (traitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .dark ? .black : .white
             }
