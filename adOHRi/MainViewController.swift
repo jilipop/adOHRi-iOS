@@ -41,11 +41,12 @@ class MainViewController: UIViewController, InterruptionDelegate {
         toastStyle.activityBackgroundColor = .clear
         toastStyle.activityIndicatorColor = .white
 
-        if #available(iOS 13.0, *) {
-            toastStyle.messageColor = UIColor.init { (traitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .dark ? .black : .white
-            }
+        if #available(iOS 13.0, *), (traitCollection.userInterfaceStyle == .dark) {
+            toastStyle.messageColor = .black
+        } else {
+            toastStyle.messageColor = .white
         }
+        
         ToastManager.shared.style = toastStyle
         
         sessionHealth = AudioSessionHealthObserver()
