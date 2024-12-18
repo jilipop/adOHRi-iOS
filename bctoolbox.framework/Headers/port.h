@@ -517,7 +517,7 @@ BCTBX_PUBLIC char *bctbx_basename(const char *path);
 /**
  * Tests if a file with given path exists.
  *
- * @param[in]	path	the file path to test
+ * @param[in]	pathname	the file path to test
  * @return 0 if yes, -1 otherwise.
 **/
 BCTBX_PUBLIC int bctbx_file_exist(const char *pathname);
@@ -572,14 +572,14 @@ BCTBX_PUBLIC int bctbx_rmdir(const char *path, bool_t recursive);
  * @brief return a timeSpec structure(sec and nsec) containing current time(WARNING: there is no guarantees it is UTC ).
  *        The time returned may refers to UTC or last boot.
  *        Use this function only to compute a time span between two calls
- * @param[in/out]	ret	The current time (seconds and nano seconds).
+ * @param[in,out]	ret	The current time (seconds and nano seconds).
  */
 BCTBX_PUBLIC void bctbx_get_cur_time(bctoolboxTimeSpec *ret);
 
 /**
  * @brief return a timeSpec structure(sec and nsec) containing current UTC time.
  *
- * @param[in/out]	ret	The current UTC time, (seconds and nano seconds)
+ * @param[in,out]	ret	The current UTC time, (seconds and nano seconds)
  */
 BCTBX_PUBLIC void bctbx_get_utc_cur_time(bctoolboxTimeSpec *ret);
 
@@ -599,7 +599,7 @@ BCTBX_PUBLIC int bctbx_timespec_compare(const bctoolboxTimeSpec *s1, const bctoo
 /**
  * @brief Add given amount of seconds to a timeSpec structure
  *
- * @param[in/out]	ts	The timeSpec structure used as input, modified in output by increnting it according to second argument
+ * @param[in,out]	ts	The timeSpec structure used as input, modified in output by increnting it according to second argument
  * @param[in]		lap	In seconds, number of seconds to modify the given timeSpec, can be negative(which may set the original timeSpec to 0)
  */
 BCTBX_PUBLIC void bctbx_timespec_add(bctoolboxTimeSpec *ts, const int64_t lap);

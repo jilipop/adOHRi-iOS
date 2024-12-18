@@ -14,6 +14,7 @@ class InfoViewController: UIViewController {
     
     let authorText = NSLocalizedString("InfoViewController.AuthorLabel", comment: "Nennung des App-Entwicklers und des Auftraggebers")
     let infoText = NSLocalizedString("InfoViewController.InfoLabel", comment: "Erklärtext zur App")
+    let privacyButtonText = NSLocalizedString("InfoViewController.PrivacyButtonText", comment: "Text des Datenschutz-Buttons")
     let licencesButtonText = NSLocalizedString("InfoViewController.LicencesButtonText", comment: "Text des Lizenzen-Buttons")
     let sourceCodeButtonText = NSLocalizedString("InfoViewController.SourceCodeButtonText", comment: "Text des Quellcode-Buttons")
     
@@ -23,8 +24,13 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var appNameAndVersion: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var licencesButton: UIButton!
     @IBOutlet weak var sourceCodeButton: UIButton!
+    
+    @IBAction func didTapPrivacyButton(sender: AnyObject) {
+        UIApplication.shared.open(URL(string:"https://ag-kurzfilm.de/de/impressum/2222.html")!, options: [:], completionHandler: nil)
+    }
     
     @IBAction func didTapSourceCodeButton(sender: AnyObject) {
         UIApplication.shared.open(URL(string:"https://github.com/jilipop/adOHRi-iOS")!, options: [:], completionHandler: nil)

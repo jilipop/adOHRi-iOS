@@ -121,8 +121,8 @@ typedef struct _WaitPoint
 typedef struct _RtpTransportModifier
 {
 	void *data;
-	struct _RtpSession *session;//<back pointer to the owning session, set by oRTP
-	struct _RtpTransport *transport;//<back point to the owning transport, set by oRTP
+	struct _RtpSession *session; //<back pointer to the owning session, set by oRTP
+	struct _RtpTransport *transport; //<back point to the owning transport, set by oRTP
 	int  (*t_process_on_send)(struct _RtpTransportModifier *t, mblk_t *msg);
 	int  (*t_process_on_receive)(struct _RtpTransportModifier *t, mblk_t *msg);
 	void  (*t_process_on_schedule)(struct _RtpTransportModifier *t); /*invoked each time rtp_session_recvm is called even is no message are available*/

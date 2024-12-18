@@ -38,9 +38,9 @@
 		52F1295527904944002DC967 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295427904944002DC967 /* ExternalAccessory.framework */; };
 		52F12957279082BE002DC967 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F12956279082BE002DC967 /* NetworkExtension.framework */; };
 		52F1295927908E02002DC967 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F1295827908E02002DC967 /* SystemConfiguration.framework */; };
-		52FEC60E279611E3001F06AF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC60D279611E3001F06AF /* Secrets.swift */; };
 		5590D445B6BC050F4E367CCD /* libPods-adOHRiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 188909A35D7212145FF79C17 /* libPods-adOHRiTests.a */; };
 		AA7D84822564074D238B47FB /* libPods-adOHRiUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1153C8665DFCC520A3E9EA /* libPods-adOHRiUITests.a */; };
+		E615A0542ADC9F5300B86DA9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E615A0532ADC9F5300B86DA9 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,13 +116,13 @@
 		52F1295427904944002DC967 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		52F12956279082BE002DC967 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		52F1295827908E02002DC967 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		52FEC60D279611E3001F06AF /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A65986ED02C38CA03752A26F /* Pods-adOHRiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adOHRiTests.release.xcconfig"; path = "Target Support Files/Pods-adOHRiTests/Pods-adOHRiTests.release.xcconfig"; sourceTree = "<group>"; };
 		ADE44FE1EF46B4DEC4060C8E /* Pods-adOHRi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adOHRi.release.xcconfig"; path = "Target Support Files/Pods-adOHRi/Pods-adOHRi.release.xcconfig"; sourceTree = "<group>"; };
 		AF1153C8665DFCC520A3E9EA /* libPods-adOHRiUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adOHRiUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0696603455B892DAB609577 /* Pods_adOHRi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_adOHRi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC581EE4200822AF2931D01 /* Pods-adOHRiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adOHRiUITests.debug.xcconfig"; path = "Target Support Files/Pods-adOHRiUITests/Pods-adOHRiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0F49D950371396AFEBF26E4 /* Pods-adOHRiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adOHRiTests.debug.xcconfig"; path = "Target Support Files/Pods-adOHRiTests/Pods-adOHRiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E615A0532ADC9F5300B86DA9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FBAF733830B7C18911A4F5D1 /* Pods-adOHRi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adOHRi.debug.xcconfig"; path = "Target Support Files/Pods-adOHRi/Pods-adOHRi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,11 +205,11 @@
 				52B7A9A0277CB798009ACFA5 /* iRx.h */,
 				52C1D8E0277A78C60081C799 /* adOHRi-Bridging-Header.h */,
 				52F1294F27904093002DC967 /* WiFiManager.swift */,
-				52FEC60D279611E3001F06AF /* Secrets.swift */,
 				52939A362797389E001AFA18 /* AudioSessionHealthObserver.swift */,
 				52939A382798C727001AFA18 /* InterruptionDelegate.swift */,
 				525F0846279B696000D704D7 /* InterruptionCause.swift */,
 				524054FB2814178D004B1242 /* licenses.json */,
+				E615A0532ADC9F5300B86DA9 /* Secrets.swift */,
 			);
 			path = adOHRi;
 			sourceTree = "<group>";
@@ -490,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F1295027904093002DC967 /* WiFiManager.swift in Sources */,
+				E615A0542ADC9F5300B86DA9 /* Secrets.swift in Sources */,
 				52939A372797389E001AFA18 /* AudioSessionHealthObserver.swift in Sources */,
 				525F0847279B696000D704D7 /* InterruptionCause.swift in Sources */,
 				5248656C27B9738200ECBF36 /* InfoViewController.swift in Sources */,
@@ -500,7 +501,6 @@
 				5264ED8927AA860500C245C1 /* InterruptionNotifier.swift in Sources */,
 				520BC73A2768DAA60026A815 /* SceneDelegate.swift in Sources */,
 				52939A392798C727001AFA18 /* InterruptionDelegate.swift in Sources */,
-				52FEC60E279611E3001F06AF /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +701,7 @@
 				CODE_SIGN_ENTITLEMENTS = adOHRi/adOHRi.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KZ58BK29GC;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
@@ -728,7 +728,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.jilipop.adOHRa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -751,7 +751,7 @@
 				CODE_SIGN_ENTITLEMENTS = adOHRi/adOHRi.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KZ58BK29GC;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
@@ -778,7 +778,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.jilipop.adOHRa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
